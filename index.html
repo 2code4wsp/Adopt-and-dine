@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="stylesheet" href="style.css">
+    <title>Adopt & Dine</title>
+</head>
+<body>
+    <header id="headerEl" class="headerEl">Adopt and Dine</header>
+    <nav id="navBarEl" class="navBarEl">
+        <li id="navLink" class="navLink"><a href="#">About</a></li>
+        <li id="navLink" class="navLink"><a href="#">Adopt</a></li>
+        <li id="navLink" class="navLink"><a href="#">Dine</a></li>
+        <li id="navLink" class="navLink"><a href="#">Veterinarians</a></li>
+        <li id="navLink" class="navLink"><a href="#">Shelters</a></li>
+    </nav>
+    <section id="searchBar" class="searchBar">
+        <section role="search">
+            <form action="#" method="get">
+                <fieldset>
+                    <legend>Search the RescueGroups.org API:</legend>
+                    <label for="s">
+                        <input type="search" name="s" id="s" placeholder="Enter a city, state or zip code..." maxlength="200" />
+                    </label>
+                    <button type="submit" title="Search for a new dinner date">Submit</button>
+                </fieldset>
+            </form>
+        </section>    
+    </section>
+    <section id="primaryMatchEl" class="primaryMatchEl"></section>
+    <section id="localRestaurantEl" class="localRestaurantEl">
+        <ul id="restaurantList" class="restaurantList">
+            <li id="restaurantEl" class="restaurantEl"></li>
+            <li id="restaurantEl" class="restaurantEl"></li>
+            <li id="restaurantEl" class="restaurantEl"></li>
+        </ul>
+    </section>
+    <section id="additionalDogEl" class="additionalDogEl">
+        <ul id="dogList" class="dogList"></ul>
+        <li id="availableDog" class="availableDog"></li>
+        <li id="availableDog" class="availableDog"></li>
+        <li id="availableDog" class="availableDog"></li>
+    </section>
+    <section id="vetEl" class="vetEl">
+        <ul id="vetList" class="vetList">
+            <li id="vetOffice" class="vetOffice"><a href="#"></a></li>
+            <li id="vetOffice" class="vetOffice"><a href="#"></a></li>
+            <li id="vetOffice" class="vetOffice"><a href="#"></a></li>
+        </ul>
+    </section>
+    <section id="shelterEl" class="shelterEl">
+        <ul id="shelterList" class="shelterList">
+            <li id="shelters" class="shelters"><a href="#"></a></li>
+            <li id="shelters" class="shelters"><a href="#"></a></li>
+            <li id="shelters" class="shelters"><a href="#"></a></li>
+            <li id="shelters" class="shelters"><a href="#"></a></li> 
+        </ul>
+    </section>
+</body>
+</html>
