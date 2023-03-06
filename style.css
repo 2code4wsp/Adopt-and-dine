@@ -9,5 +9,6 @@ font-family: 'Kalam', cursive; */
 }
  .nav-wrapper, 
  .btn {
+    font-size: larger;
     font-family: 'Kalam', cursive;
  }
