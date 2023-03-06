@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Kalam:wght@300&display=swap');
+/* font-family: 'Handlee', cursive;
+font-family: 'Kalam', cursive; */
+
+
+#headerEl {
+    font-size: xx-large;
+    font-family: 'Handlee', cursive;
+}
+ .nav-wrapper, 
+ .btn {
+    font-family: 'Kalam', cursive;
+ }
