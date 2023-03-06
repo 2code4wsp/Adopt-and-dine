@@ -18,11 +18,15 @@
     <header id="headerEl" class="headerEl green darken-2 white-text">Adopt and Dine</header>
     <nav id="navBarEl" class="navBarEl">
         <!-- Background Color Sheme: green and purple -->
-        <li id="navLink" class="navLink purple lighten-3"><a href="#" class="black-text">About</a></li>
-        <li id="navLink" class="navLink black-text"><a href="#" class="black-text">Adopt</a></li>
-        <li id="navLink" class="navLink"><a href="#">Dine</a></li>
-        <li id="navLink" class="navLink"><a href="#">Veterinarians</a></li>
-        <li id="navLink" class="navLink"><a href="#">Shelters</a></li>
+        <!-- flow-text = materialize class to make text more responsive and prominent-->
+        <!-- nav-wrapper = materialize class used to defin container element that wraps around the navigation bar component-->
+        <div class="nav-wrapper">
+            <li id="navLink" class="navLink purple lighten-4"><a href="#" class="black-text flow-text">About</a></li>
+            <li id="navLink" class="navLink black-text"><a href="#" class="black-text">Adopt</a></li>
+            <li id="navLink" class="navLink"><a href="#">Dine</a></li>
+            <li id="navLink" class="navLink"><a href="#">Veterinarians</a></li>
+            <li id="navLink" class="navLink"><a href="#">Shelters</a></li>
+        </div>
     </nav>
     <section id="searchBar" class="searchBar">
         <section role="search">
@@ -32,12 +36,18 @@
                     <label for="s">
                         <input type="search" name="s" id="s" placeholder="Enter a city, state or zip code..." maxlength="200" />
                     </label>
-                    <button type="submit" title="Search for a new dinner date">Submit</button>
+                    <!-- btn = materlize class, common button at google-->
+                    <!-- waves-effect = materialize class for ripple on button-->
+                    <!-- dog icon included left of Submit button using materialize icons-->
+                    <!-- can use hoverable on any element to make it pop up on hover-->
+                    <!-- TODO: change button size to smaller size-->
+                    <button type="submit" title="Search for a new dinner date" class="btn waves-effect purple lighten-1 hoverable z-depth-3"><i class="material-icons left">pets</i>Submit</button>
                 </fieldset>
             </form>
         </section>    
     </section>
-    <section id="primaryMatchEl" class="primaryMatchEl"></section>
+    <!--Make text purple for restaurant matches-->
+    <section id="primaryMatchEl" class="primaryMatchEl purple-text text-lighten-1"></section>
     <section id="localRestaurantEl" class="localRestaurantEl">
         <ul id="restaurantList" class="restaurantList">
             <li id="restaurantEl" class="restaurantEl"></li>
@@ -45,7 +55,12 @@
             <li id="restaurantEl" class="restaurantEl"></li>
         </ul>
     </section>
-    <section id="additionalDogEl" class="additionalDogEl">
+     <!--Make text purple (maybe different color) for dog matches-->
+     <!-- Generate image of each match alongside text using 
+        <img src="" alt="" class="responsive-img circle" alt=""> for a responsive, circular image-->
+        
+     
+    <section id="additionalDogEl" class="additionalDogEl purple-text text-lighten-1">
         <ul id="dogList" class="dogList"></ul>
         <li id="availableDog" class="availableDog"></li>
         <li id="availableDog" class="availableDog"></li>
