@@ -3,12 +3,46 @@
 font-family: 'Kalam', cursive; */
 
 
+body {
+    font-family: 'Handlee', cursive;
+}
+
 #headerEl {
     font-size: xx-large;
     font-family: 'Handlee', cursive;
 }
+.subHeader{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+.headerImg{
+    height: 150px;
+    border: solid 5px black;
+}
+
  .nav-wrapper, 
  .btn {
     font-size: larger;
-    font-family: 'Kalam', cursive;
+    font-family: 'Handlee', cursive;
+ }
+
+ #nav-bar {
+    height: 10px;
+    line-height: 30px;
+ }
+
+ .btn {
+    margin: 10px;
+ }
+
+ .btn:hover {
+    color: rgb(115, 231, 231);
+ }
+
+ input::placeholder{
+    color: rgb(103, 103, 103)
  }

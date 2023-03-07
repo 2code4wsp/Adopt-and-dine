@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,76 +11,131 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
+
     <link rel="stylesheet" href="style.css">
     <title>Adopt & Dine</title>
 </head>
+
 <body>
-    <header id="headerEl" class="headerEl green darken-2 white-text">Adopt and Dine</header>
-    <nav id="navBarEl" class="navBarEl">
-        <!-- Background Color Sheme: green and purple -->
-        <!-- flow-text = materialize class to make text more responsive and prominent-->
-        <!-- nav-wrapper = materialize class used to defin container element that wraps around the navigation bar component-->
-        <div class="nav-wrapper">
-            <li id="navLink" class="navLink purple lighten-4"><a href="#" class="purple-text text-darken-4 flow-text">About</a></li>
-            <li id="navLink" class="navLink purple lighten-3"><a href="#" class="purple-text text-darken-4">Adopt</a></li>
-            <li id="navLink" class="navLink green lighten-2"><a href="#" class="green-text text-darken-4">Dine</a></li>
-            <li id="navLink" class="navLink teal lighten-3"><a href="#" class="teal-text text-darken-4">Veterinarians</a></li>
-            <li id="navLink" class="navLink teal lighten-4"><a href="#" class="teal-text text-darken-4">Shelters</a></li>
-        </div>
-    </nav>
-    <section id="searchBar" class="searchBar">
+    <header id="headerEl" class="headerEl green darken-2 white-text">
+<div class="subHeader" >
+    <h1>Adopt and Dine</h1>
+    <img class="headerImg" src="adopt-dine-pup.jpeg" alt="" >
+</div>
+        <nav id="navBarEl" class="nav-extended">
+            <!-- Background Color Sheme: green and purple -->
+            <!-- flow-text = materialize class to make text more responsive and prominent-->
+            <!-- nav-wrapper = materialize class used to defin container element that wraps around the navigation bar component-->
+            <div class="row nav-wrapper green darken-2">
+                <!--enclosed nav elements in ul element to manipulate to the right-->
+                <!-- <ul id="navList" class="col s12 right"> -->
+                    <!-- Using js add a class "active" to <li> elements when (<li> #navLink) clicked-->
+                    <!-- Included tab class to manipulate navLink elements -->
+                    <!-- <li id="navLink" class="tab navLink purple lighten-4"><a href="#tab1"
+                            class="purple-text text-darken-4">About</a></li>
+                    <li id="navLink" class="tab navLink purple lighten-3"><a href="#tab2"
+                            class="purple-text text-darken-4">Adopt</a></li>
+                    <li id="navLink" class="tab navLink green lighten-2"><a href="#tab3"
+                            class="green-text text-darken-4">Dine</a></li>
+                    <li id="navLink" class="tab navLink teal lighten-3"><a href="#tab4"
+                            class="teal-text text-darken-4">Veterinarians</a></li>
+                    <li id="navLink" class="tab navLink teal lighten-4"><a href="#tab5"
+                            class="teal-text text-darken-4">Shelters</a></li>
+                </ul> -->
+    
+           
+                    <a href="#" class="brand-logo"></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li id="navLink" class="tab navLink purple lighten-4"><a href="#tab1"
+                            class="purple-text text-darken-4">About</a></li>
+                      <li><a href="badges.html">Components</a></li>
+                      <li><a href="collapsible.html">JavaScript</a></li>
+                    </ul>
+                
+            </div>
+        </nav>
+    </header>
+    <section id="searchBar" class="row searchBar">
         <section role="search">
             <form action="#" method="get">
-                <fieldset class="green accent-1">
+                <fieldset class="col s4 green accent-1">
                     <legend class="black-text">Search the RescueGroups.org API:</legend>
                     <label for="s">
-                        <input type="search" name="s" id="s" placeholder="Enter a city, state or zip code..." maxlength="200" />
+                        <input type="search" name="s" id="s" placeholder="Enter a city, state or zip code..."
+                            maxlength="200" />
                     </label>
                     <!-- btn = materlize class, common button at google-->
                     <!-- waves-effect = materialize class for ripple on button-->
                     <!-- dog icon included left of Submit button using materialize icons-->
                     <!-- can use hoverable on any element to make it pop up on hover-->
                     <!-- TODO: change button size to smaller size-->
-                    <button type="submit" title="Search for a new dinner date" class="btn waves-effect purple lighten-1 hoverable z-depth-3"><i class="material-icons left">pets</i>Submit</button>
+                    <button type="submit" title="Search for a new dinner date"
+                        class="btn waves-effect purple lighten-1 hoverable z-depth-3"><i
+                            class="material-icons left">pets</i>Submit</button>
                 </fieldset>
             </form>
-        </section>    
+        </section>
     </section>
+    <!-- Take up 9 columns for search results, as three cards stacked on eachother-->
     <!--Make text purple for restaurant matches-->
-    <section id="primaryMatchEl" class="primaryMatchEl purple-text text-lighten-1"></section>
-    <section id="localRestaurantEl" class="localRestaurantEl">
-        <ul id="restaurantList" class="restaurantList">
-            <li id="restaurantEl" class="restaurantEl"></li>
-            <li id="restaurantEl" class="restaurantEl"></li>
-            <li id="restaurantEl" class="restaurantEl"></li>
+    <section id="primaryMatchEl" class="container row primaryMatchEl purple-text text-lighten-1">
+        <div id="localRestaurantEl" class="col s6 localRestaurantEl">
+            <!-- Use JS to populate location name where location is currently-->
+            <h2 id="restaurantLocation">Location</h2>
+            <img src="" alt="">
+        </div>
+        <ul id="restaurantList" class="col s6 restaurantList">
+            <li class="restaurantEl">a</li>
+            <li class="restaurantEl">b</li>
+            <li class="restaurantEl">c</li>
+            <li class="restaurantEl">d</li>
         </ul>
     </section>
-     <!--Make text purple (maybe different color) for dog matches-->
-     <!-- Generate image of each match alongside text using 
+    <!--Make text purple (maybe different color) for dog matches-->
+    <!-- Generate image of each match alongside text using 
         <img src="" alt="" class="responsive-img circle" alt=""> for a responsive, circular image-->
+
+    <!-- 6 columns for location and 6 columns for img-->
+    <!-- class="row additionalDogEl purple lighten-3 purple-text text-lighten-1" -->
+    <section id="additionalDogEl" class="container row additionalDogEl purple-text text-lighten-1">
+        <div class="col s6">
+            <!-- Use JS to populate dog where Available Friend is currently-->
+            <h2 id="availableFriend">Available Friend</h2>
+            <img src="" alt="">
+        </div>
+            <ul id="dogList" class="col s6 dogList">
+                <li id="availableDog" class="availableDog">a</li>
+                <li id="availableDog" class="availableDog">b</li>
+                <li id="availableDog" class="availableDog">c</li>
+            </ul>
         
-     
-    <section id="additionalDogEl" class="additionalDogEl purple-text text-lighten-1">
-        <ul id="dogList" class="dogList"></ul>
-        <li id="availableDog" class="availableDog"></li>
-        <li id="availableDog" class="availableDog"></li>
-        <li id="availableDog" class="availableDog"></li>
     </section>
-    <section id="vetEl" class="vetEl">
-        <ul id="vetList" class="vetList">
-            <li id="vetOffice" class="vetOffice"><a href="#"></a></li>
-            <li id="vetOffice" class="vetOffice"><a href="#"></a></li>
-            <li id="vetOffice" class="vetOffice"><a href="#"></a></li>
+    <!--Repeat the same formatting of 9 columns and 3 stacked card for up to id shelterEl-->
+    <section id="vetEl" class="container row vetEl purple-text text-lighten-1">
+        <div class="col s6">
+            <!-- Use JS to populate dog where Vet Office is currently-->
+            <h2 id="vetOfficeAvailable">Vet Office</h2>
+            <img src="" alt="">
+        </div>
+        <ul id="vetList" class="col s6 vetList">
+            <li id="vetOffice" class="vetOffice"><a href="#"></a>a</li>
+            <li id="vetOffice" class="vetOffice"><a href="#"></a>b</li>
+            <li id="vetOffice" class="vetOffice"><a href="#"></a>c</li>
         </ul>
     </section>
-    <section id="shelterEl" class="shelterEl">
-        <ul id="shelterList" class="shelterList">
-            <li id="shelters" class="shelters"><a href="#"></a></li>
-            <li id="shelters" class="shelters"><a href="#"></a></li>
-            <li id="shelters" class="shelters"><a href="#"></a></li>
-            <li id="shelters" class="shelters"><a href="#"></a></li> 
+    <section id="shelterEl" class="container row shelterEl purple-text text-lighten-1">
+        <div class="col s6">
+            <!-- Use JS to populate shelter where Shelter is currently-->
+            <h2 id="shelterName">Shelter</h2>
+            <img src="" alt="">
+        </div>
+        <ul id="shelterList" class="col s6 shelterList">
+            <li id="shelters" class="shelters"><a href="#"></a>a</li>
+            <li id="shelters" class="shelters"><a href="#"></a>b</li>
+            <li id="shelters" class="shelters"><a href="#"></a>c</li>
+            <li id="shelters" class="shelters"><a href="#"></a>d</li>
         </ul>
     </section>
 </body>
+
 </html>
