@@ -36,6 +36,8 @@ background-size: cover;
 
 .headerImg{
     height: 120px;
+    border-radius: 50%/contain;
+    /*transform: scale(1.5); */
 }
 
 .nav-wrapper, 
