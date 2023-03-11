@@ -1,16 +1,16 @@
-const token = '{YOUR_ACCESS_TOKEN}';
+
 const location = '{city, state, zip}';
 const limit = 3;
 
 //Fetch doggy data
-const dogURL = `https://api.petfinder.com/v2/animals?type=dog&location=${location}&limit=${limit}&fields=name,age,gender,breeds,photos`;
+const dogURL = `https://api.petfinder.com/v2/animals?type=dog&location=${location}&limit=${limit}&fields=name,age,gender,breeds,photos&key=${petKey}`;
 
 const petKey = 'vO3ybpsfJI6gi3UQ4bPmLW91dFsM8zOh5TsgnjjRQY0sTkMggW'
 const petSecret = 'bx9RsyfRlesCpNa5SnRXTox2w2NvWSOSYy8MWGVf'
 
 fetch(dogURL, {
     headers: {
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer $petKey`
     }
 })
 .then(response => response.json())
@@ -40,13 +40,18 @@ fetch(dogURL, {
         photo.src = dog.photos[0].medium;
 
         //add card to dog container
+        card.appendChild(name);
+        card.appendChild(age);
+        card.appendChild(gender);
+        card.appendChild(breed);
+        card.appendChild(photo);
         dogContainer.appendChild(card);
     });
 })
 .catch(error => console.error(error));
 
 //fetch vet and shelter data
-const dogOfficesURL = `https://api.petfinder.com/v2/organizations?type=vet,shelter&location=${location}&limit=${limit}`;
+const dogOfficesURL = `https://api.petfinder.com/v2/organizations?type=vet,shelter&location=${location}&limit=${limit}%key=${petKey}`;
 
 fetch(dogOfficesURL, {
     headers: {
