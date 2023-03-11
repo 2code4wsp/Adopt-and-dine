@@ -6,7 +6,7 @@ With so many dogs in the world in need of a good home, and so many homes full of
 
 [Your landing page should look something like this!](screenshot.png)
 
-##Licensing
+## Licensing
 
 This application is free and open-source and we invite you to make a pull request if you have suggestions or improvements.
 
