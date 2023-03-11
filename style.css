@@ -19,6 +19,7 @@ body {
     font-size: xx-large;
     font-family: 'Handlee', cursive;
 }
+
 .subHeader{
 display: flex;
 justify-content: space-between;
@@ -28,8 +29,7 @@ padding-right: 10px;
 }
 
 .headerImg{
-    height: 150px;
-    border: solid 5px black;
+    height: 100px;
 }
 
  .nav-wrapper, 
@@ -57,4 +57,21 @@ padding-right: 10px;
 
  fieldset {
    margin-left: 10px;
+ }
+
+ /*Made image into cirlce */
+.headerImgHeart {
+   position: relative;
+   width: 200px;
+   height: 200px;
+   margin: 50px auto;
+   -webkit-clip-path: circle(50% at center);
+   clip-path: circle(50% at center);
+ }
+
+ .headerImgHeart img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   object-position: center center;
  }
