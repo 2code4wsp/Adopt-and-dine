@@ -5,6 +5,9 @@ const limit = 3;
 //Fetch doggy data
 const dogURL = `https://api.petfinder.com/v2/animals?type=dog&location=${location}&limit=${limit}&fields=name,age,gender,breeds,photos`;
 
+const petKey = 'vO3ybpsfJI6gi3UQ4bPmLW91dFsM8zOh5TsgnjjRQY0sTkMggW'
+const petSecret = 'bx9RsyfRlesCpNa5SnRXTox2w2NvWSOSYy8MWGVf'
+
 fetch(dogURL, {
     headers: {
         Authorization: `Bearer ${token}`
