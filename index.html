@@ -21,7 +21,8 @@
     <!-- navbar-fixed = fixes header at the top of the page and makes it always visible even when scrolling-->
     <header id="headerEl" class="headerEl green darken-2 white-text">
         <div class="subHeader" >
-            <h1>Adopt and Dine</h1>
+            <!-- added header and center class maybe -->
+            <h1 id="adoptAndDine">Adopt and Dine</h1>
             <img class="headerImg" src="adopt-dine-pup.jpeg" alt="" >
         </div>
 
@@ -50,10 +51,12 @@
             </div>
         </nav>
     </header>
-    <section id="searchBar" class="row searchBar">
+    <!-- added header and center -->
+    <section id="searchBar" class="row searchBar center">
         <section role="search">
             <form action="#" method="get">
-                <fieldset class="col s4 green accent-1">
+                <!-- Used offset-s2 to center search field-->
+                <fieldset class="col s8 offset-s2 green accent-1">
                     <legend class="black-text">Search the RescueGroups.org API:</legend>
                     <label for="s">
                         <input type="search" name="s" id="s" placeholder="Enter a city, state or zip code..."
