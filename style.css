@@ -42,25 +42,47 @@ background-size: cover;
 
 .nav-wrapper, 
 .btn {
-    font-size: larger;
-    font-family: 'Handlee', cursive;
+  font-size: larger;
+  font-family: 'Handlee', cursive;
 }
 
+#navList {
+  display: flex;
+  /*created rounded corners on top of tab */
+  border-radius: 10px;
+  overflow: hidden;
+}
 
+.tab {
+  flex: 1;
+  padding: 0px 5px;
+  border: none;
+  background-color: #f2f2f2;
+  font-size: 16px;
+  color: #333;
+  border-radius: 5px 5px 0 0;
+}
 
- .nav-wrapper {
-    /*height: 10px; */
-    line-height: 50px;
+.tab:first-child {
+  border-radius: 10px 0 0 0;
+}
+
+.tab:last-child {
+  border-radius: 0 10px 0 0;
+}
+
+.nav-wrapper {
+    line-height: 70px;
     background-image: url("/bottom-grass-water-splash.jpg");
     /* so image wont repeat */
     background-repeat: no-repeat;
     /* ensures image covers entire element */ 
     background-size: cover;
- }
+}
 
  .btn {
     margin: 10px;
-    border-radius: 40px 20px 40px 20px;;
+    border-radius: 40px 40px 40px 40px;;
  }
 
  .btn:hover {
@@ -71,9 +93,9 @@ background-size: cover;
     color: rgb(103, 103, 103)
  }
 
- /*fieldset {
-   margin-left: 10px;
- } */
+ fieldset {
+   border-radius: 40px 40px 40px 40px;
+ } 
 
 .headerImgCircle {
    position: relative;
