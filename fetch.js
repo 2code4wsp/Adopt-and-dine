@@ -167,6 +167,43 @@ fetch(dogOfficesURL, {
 //Parse response - name, age, breed, gender, location
 //Dynamic html element creation to house data
 
+//Event Listener for tab scrolling to respective section when clicked
+function scrollToSection(id) {
+  const section = document.querySelector(id);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+const aboutTab = document.querySelector('a[href="#aboutEl"]');
+aboutTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#aboutEl');
+});
+
+const localRestaurantTab = document.querySelector('a[href="#localRestaurantEl"]');
+localRestaurantTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#localRestaurantEl');
+});
+
+const additionalDogTab = document.querySelector('a[href="#additionalDogEl"]');
+additionalDogTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#additionalDogEl');
+});
+
+const vetTab = document.querySelector('a[href="#vetEl"]');
+vetTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#vetEl');
+});
+
+const shelterTab = document.querySelector('a[href="#shelterEl"]');
+shelterTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#shelterEl');
+});
 
 
 //Event listeners for each button:
