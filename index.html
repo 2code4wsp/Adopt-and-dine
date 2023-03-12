@@ -11,55 +11,58 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+    <!--ajax-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Adopt & Dine</title>
 </head>
 
-<body>
+<body class="bg-color blue lighten-4">
+
+    <!-- navbar-fixed = fixes header at the top of the page and makes it always visible even when scrolling-->
     <header id="headerEl" class="headerEl green darken-2 white-text">
-<div class="subHeader" >
-    <h1>Adopt and Dine</h1>
-    <img class="headerImg" src="adopt-dine-pup.jpeg" alt="" >
-</div>
-        <nav id="navBarEl" class="nav-extended">
+        <!-- Add grass background image-->
+        <div class="subHeader" > 
+            <!-- add header and center class maybe -->
+            <h1 id="adoptAndDine" class="">Adopt and Dine</h1>
+            <!-- Added headerImgCircle class-->
+            <div class="headerImgCircle">
+                <img class="headerImg" src="adopt-dine-headshot.png" alt="An adoption dog" >
+            </div>
+        </div>
+
+        <nav id="navBarEl" class="nav-extended navbar-fixed">
             <!-- Background Color Sheme: green and purple -->
             <!-- flow-text = materialize class to make text more responsive and prominent-->
             <!-- nav-wrapper = materialize class used to defin container element that wraps around the navigation bar component-->
-            <div class="row nav-wrapper green darken-2">
+            <!--<div class="row nav-wrapper green darken-2"> -->
                 <!--enclosed nav elements in ul element to manipulate to the right-->
-                <ul id="navList" class="col s12 offset-s6">
+                <ul id="navList" class="right">
                     <!-- Using js add a class "active" to <li> elements when (<li> #navLink) clicked-->
                     <!-- Included tab class to manipulate navLink elements -->
                     <li id="navLink" class="tab navLink purple lighten-4"><a href="#tab1"
                             class="purple-text text-darken-4">About</a></li>
-                    <li id="navLink" class="tab navLink purple lighten-3"><a href="#tab2"
-                            class="purple-text text-darken-4">Adopt</a></li>
-                    <li id="navLink" class="tab navLink green lighten-2"><a href="#tab3"
-                            class="green-text text-darken-4">Dine</a></li>
-                    <li id="navLink" class="tab navLink teal lighten-3"><a href="#tab4"
-                            class="teal-text text-darken-4">Veterinarians</a></li>
+                    <li id="navLink" class="tab navLink indigo lighten-3"><a href="#tab2"
+                            class="indigo-text text-darken-4">Adopt</a></li>
+                    <li id="navLink" class="tab navLink lime lighten-3"><a href="#tab3"
+                            class="indigo-text text-darken-4">Dine</a></li>
+                    <li id="navLink" class="tab navLink blue lighten-3"><a href="#tab4"
+                            class="blue-text text-darken-4">Veterinarians</a></li>
                     <li id="navLink" class="tab navLink teal lighten-4"><a href="#tab5"
                             class="teal-text text-darken-4">Shelters</a></li>
                 </ul>
-    
-           
-                    <!--<a href="#" class="brand-logo"></a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li id="navLink" class="tab navLink purple lighten-4"><a href="#tab1"
-                            class="purple-text text-darken-4">About</a></li>
-                      <li><a href="badges.html">Components</a></li>
-                      <li><a href="collapsible.html">JavaScript</a></li>
-                    </ul>-->
-                
-            </div>
+            <!-- </div> -->
         </nav>
+
     </header>
-    <section id="searchBar" class="row searchBar">
+    <!-- added header and center -->
+    <section id="searchBar" class="row searchBar center">
         <section role="search">
-            <form action="#" method="get">
-                <fieldset class="col s4 green accent-1">
-                    <legend class="black-text">Search the RescueGroups.org API:</legend>
+            <form action="#" method="get" class="m-t-20">
+                <!-- Used offset-s2 to center search field-->
+                <!-- fieldset use to be green accent-1-->
+                <fieldset class="col s8 offset-s2">
+                    <legend id="searchFieldLegend" class="black-text">Search the RescueGroups.org API:</legend>
                     <label for="s">
                         <input type="search" name="s" id="s" placeholder="Enter a city, state or zip code..."
                             maxlength="200" />
@@ -68,7 +71,7 @@
                     <!-- waves-effect = materialize class for ripple on button-->
                     <!-- dog icon included left of Submit button using materialize icons-->
                     <!-- can use hoverable on any element to make it pop up on hover-->
-                    <!-- TODO: change button size to smaller size-->
+                    <!-- TODO: change button size to smaller size (btn-small)-->
                     <button type="submit" title="Search for a new dinner date"
                         class="btn waves-effect purple lighten-1 hoverable z-depth-3"><i
                             class="material-icons left">pets</i>Submit</button>
@@ -76,6 +79,12 @@
             </form>
         </section>
     </section>
+
+    <section id="aboutEl" class="aboutEl container">
+        <h3>About Us</h3>
+        <p id="aboutText" class="aboutText center-align">With so many wonderful dogs in need of homes and so many wonderful people in need of dogs, Adopt and Dine wanted to create a platform to introduce people to their new furry friend and a great new restaurant so that they can dine together after adoption. We hope you and your companion enjoy your first meal together, bone-app&eacute;tit!</p>
+    </section>
+
     <!-- Take up 9 columns for search results, as three cards stacked on eachother-->
     <!--Make text purple for restaurant matches-->
     <section id="primaryMatchEl" class="container row primaryMatchEl purple-text text-lighten-1">
@@ -103,12 +112,7 @@
             <h2 id="availableFriend">Available Friend</h2>
             <img src="" alt="">
         </div>
-            <ul id="dogList" class="col s6 dogList">
-                <li id="availableDog" class="availableDog">a</li>
-                <li id="availableDog" class="availableDog">b</li>
-                <li id="availableDog" class="availableDog">c</li>
-            </ul>
-        
+                    
     </section>
     <!--Repeat the same formatting of 9 columns and 3 stacked card for up to id shelterEl-->
     <section id="vetEl" class="container row vetEl purple-text text-lighten-1">
@@ -117,11 +121,7 @@
             <h2 id="vetOfficeAvailable">Vet Office</h2>
             <img src="" alt="">
         </div>
-        <ul id="vetList" class="col s6 vetList">
-            <li id="vetOffice" class="vetOffice"><a href="#"></a>a</li>
-            <li id="vetOffice" class="vetOffice"><a href="#"></a>b</li>
-            <li id="vetOffice" class="vetOffice"><a href="#"></a>c</li>
-        </ul>
+       
     </section>
     <section id="shelterEl" class="container row shelterEl purple-text text-lighten-1">
         <div class="col s6">
@@ -129,13 +129,9 @@
             <h2 id="shelterName">Shelter</h2>
             <img src="" alt="">
         </div>
-        <ul id="shelterList" class="col s6 shelterList">
-            <li id="shelters" class="shelters"><a href="#"></a>a</li>
-            <li id="shelters" class="shelters"><a href="#"></a>b</li>
-            <li id="shelters" class="shelters"><a href="#"></a>c</li>
-            <li id="shelters" class="shelters"><a href="#"></a>d</li>
-        </ul>
+       
     </section>
+    <script src="fetch.js"></script>
 </body>
 
 </html>

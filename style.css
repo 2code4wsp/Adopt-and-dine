@@ -2,41 +2,93 @@
 /* font-family: 'Handlee', cursive;
 font-family: 'Kalam', cursive; */
 
+* {
+   /* border-box tells the browser to account for any border and padding in the values you specify for an element's width and height. If you set an element's width to 100 pixels, that 100 pixels will include any border or padding you added*/
+   box-sizing: border-box;
+}
 
 body {
     font-family: 'Handlee', cursive;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
 }
 
 #headerEl {
     font-size: xx-large;
     font-family: 'Handlee', cursive;
 }
+
 .subHeader{
 display: flex;
 justify-content: space-between;
 align-items: center;
 padding-left: 10px;
 padding-right: 10px;
+/* include path to grass background image */
+/* background-image: url("/grass-water-splash.jpg");*/
+background-image: url("/bottom-grass-water-splash.jpg");
+/* so image wont repeat */
+background-repeat: no-repeat;
+/* ensures image covers entire element */ 
+background-size: cover;
+
 }
 
 .headerImg{
-    height: 150px;
-    border: solid 5px black;
+    height: 120px;
+    border-radius: 50%/contain;
+    /*transform: scale(1.5); */
 }
 
- .nav-wrapper, 
- .btn {
-    font-size: larger;
-    font-family: 'Handlee', cursive;
- }
+.nav-wrapper, 
+.btn {
+  font-size: larger;
+  font-family: 'Handlee', cursive;
+}
 
- #nav-bar {
-    height: 10px;
-    line-height: 30px;
- }
+#navList {
+  display: flex;
+  /*created rounded corners on top of tab */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tab {
+  flex: 1;
+  padding: 0px 5px;
+  border: none;
+  background-color: #f2f2f2;
+  font-size: 16px;
+  color: #333;
+  border-radius: 5px 5px 0 0;
+  font-size: 300px;
+}
+
+.tab:first-child {
+  border-radius: 10px 0 0 0;
+}
+
+.tab:last-child {
+  border-radius: 0 10px 0 0;
+}
+
+.nav-wrapper {
+    line-height: 70px;
+    background-image: url("/bottom-grass-water-splash.jpg");
+    /* so image wont repeat */
+    background-repeat: no-repeat;
+    /* ensures image covers entire element */ 
+    background-size: cover;
+}
+
+.aboutText {
+  font-size: larger;
+}
 
  .btn {
     margin: 10px;
+    border-radius: 40px 40px 40px 40px;;
  }
 
  .btn:hover {
@@ -45,4 +97,39 @@ padding-right: 10px;
 
  input::placeholder{
     color: rgb(103, 103, 103)
+ }
+
+ fieldset {
+   border-radius: 40px 40px 40px 40px;
+   margin: 35px;
+ } 
+
+.headerImgCircle {
+   position: relative;
+   width: 200px;
+   height: 200px;
+   margin: 50px auto;
+   -webkit-clip-path: circle(50% at center);
+   clip-path: circle(50% at center);
+   display: flex;
+   
+ }
+
+ .headerImgCircle img {
+   width: 100%;
+   height: 100%;
+   /* object-fit:contain ensure image shrinks as the shape is reduced */
+   object-fit: contain; 
+   object-position: center center;
+   display: flex;
+   
+ }
+
+ #adoptAndDine {
+    margin-left: 100px;
+    display: flex;
+ }
+
+ #searchFieldLegend {
+  font-size: 1.5em;
  }
