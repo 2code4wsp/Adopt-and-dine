@@ -66,7 +66,18 @@ function getDogs(location, limit) {
 }
 getDogs(zip, 3);
 
-
+//code to filter repeated dogs
+// const processedDogs = {}; 
+//   const dogs = data.animals.filter(dog => {
+//     if (processedDogs[dog.id]) {
+//       // dog has already been processed, filter it out
+//       return false;
+//     } else {
+//       // dog hasn't been processed, mark it as processed and include it
+//       processedDogs[dog.id] = true;
+//       return true;
+//     }
+//   });
 
 /*
 fetch(dogURL, {
