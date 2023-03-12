@@ -59,3 +59,7 @@ const options = {
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(err => console.error(err));
+
+//add event listener for search
+
+//
