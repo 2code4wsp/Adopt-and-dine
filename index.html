@@ -26,7 +26,7 @@
             <h1 id="adoptAndDine" class="">Adopt and Dine</h1>
             <!-- Added headerImgCircle class-->
             <div class="headerImgCircle">
-                <img class="headerImg" src="adopt-dine-pup.jpeg" alt="An adoption dog" >
+                <img class="headerImg" src="adopt-dine-headshot.png" alt="An adoption dog" >
             </div>
         </div>
 
@@ -61,8 +61,9 @@
         <section role="search">
             <form action="#" method="get">
                 <!-- Used offset-s2 to center search field-->
-                <fieldset class="col s8 offset-s2 green accent-1">
-                    <legend class="black-text">Search the Petfinder API:</legend>
+                <!-- fieldset use to be green accent-1-->
+                <fieldset class="col s8 offset-s2">
+                    <legend id="searchFieldLegend" class="black-text">Search the RescueGroups.org API:</legend>
                     <label for="s">
                         <input type="search" name="s" id="s" placeholder="Enter a city, state or zip code..."
                             maxlength="200" />
@@ -71,7 +72,7 @@
                     <!-- waves-effect = materialize class for ripple on button-->
                     <!-- dog icon included left of Submit button using materialize icons-->
                     <!-- can use hoverable on any element to make it pop up on hover-->
-                    <!-- TODO: change button size to smaller size-->
+                    <!-- TODO: change button size to smaller size (btn-small)-->
                     <button type="submit" title="Search for a new dinner date"
                         class="btn waves-effect purple lighten-1 hoverable z-depth-3"><i
                             class="material-icons left">pets</i>Submit</button>

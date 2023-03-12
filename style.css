@@ -31,25 +31,36 @@ background-image: url("/grass-water-splash.jpg");
 background-repeat: no-repeat;
 /* ensures image covers entire element */ 
 background-size: cover;
+
 }
 
 .headerImg{
     height: 120px;
+    border-radius: 50%/contain;
+    /*transform: scale(1.5); */
 }
 
- .nav-wrapper, 
- .btn {
+.nav-wrapper, 
+.btn {
     font-size: larger;
     font-family: 'Handlee', cursive;
- }
+}
 
- #nav-bar {
-    height: 10px;
-    line-height: 30px;
+
+
+ .nav-wrapper {
+    /*height: 10px; */
+    line-height: 50px;
+    background-image: url("/bottom-grass-water-splash.jpg");
+    /* so image wont repeat */
+    background-repeat: no-repeat;
+    /* ensures image covers entire element */ 
+    background-size: cover;
  }
 
  .btn {
     margin: 10px;
+    border-radius: 40px 20px 40px 20px;;
  }
 
  .btn:hover {
@@ -86,6 +97,10 @@ background-size: cover;
  }
 
  #adoptAndDine {
-    margin-left: 200px;
+    margin-left: 100px;
     display: flex;
+ }
+
+ #searchFieldLegend {
+  font-size: 1.5em;
  }
