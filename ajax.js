@@ -38,7 +38,7 @@ let authToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ2TzN5YnBzZkpJNm
 // function getDogs(location, limit) {
         
 //         $.ajax({
-//         url: 'https://api.petfinder.com/v2/animals?type=dog&status=adoptable',
+//         url: 'https://api.petfinder.com/v2/animals?type=dog&status=adoptable&has_photo=1',
 //         type: 'GET',
 //         headers: {
 //             'Authorization': `Bearer ${authToken}`
