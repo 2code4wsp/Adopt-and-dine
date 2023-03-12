@@ -26,7 +26,8 @@ align-items: center;
 padding-left: 10px;
 padding-right: 10px;
 /* include path to grass background image */
-background-image: url("/grass-water-splash.jpg");
+/* background-image: url("/grass-water-splash.jpg");*/
+background-image: url("/bottom-grass-water-splash.jpg");
 /* so image wont repeat */
 background-repeat: no-repeat;
 /* ensures image covers entire element */ 
