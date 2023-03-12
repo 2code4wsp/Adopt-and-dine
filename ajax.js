@@ -26,8 +26,9 @@ function getToken() {
      })
      .done(function(response) {
          console.log(response);
-       let authToken = response.access_token;
+       authToken = response.access_token;
        console.log(authToken);
+       localStorage.setItem('authToken',response.access_token), 
        // Set the expiration time for the new token to one hour from the current time
        authTokenExpirationTime = new Date().getTime() + response.expires_in * 1000;
      });
@@ -36,43 +37,46 @@ function getToken() {
 
 
  getToken();
- console.log(authToken)
 
-// function getDogs(location, limit) {
+ let authToken = localStorage.getItem('authToken')
+
+ //let authToken="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ2TzN5YnBzZkpJNmdpM1VRNGJQbUxXOTFkRnNNOHpPaDVUc2duampSUVkwc1RrTWdnVyIsImp0aSI6Ijc5NTVhMmNmMmEyZDRlNDdhYmUzYWVmYTQwMjg0OTljNTdkMzZhNTEwZTU5OGFkNjdjZWJlMzYzMDVkZjgyNTdjMTVlMjRjNjk5NWQ4NmIzIiwiaWF0IjoxNjc4NjU2ODIwLCJuYmYiOjE2Nzg2NTY4MjAsImV4cCI6MTY3ODY2MDQyMCwic3ViIjoiIiwic2NvcGVzIjpbXX0.w6ABe2QezH5NtpQOE1JM-9Ejz2TBdhqvN2_uVPUpLItTUk9LFKElzxgR6PRBd12oCP8UKLUx5aDRcp8QynnOsnG7f57_rCwcgl240jS1wZOX5ai5rwYsKf9KAvIMZfdJSYkUt06dYxTkqIIpNC_sCwPTMmNT-hXT3HHOUbIAKpwxdrCe1NIE6nKTJPP9Spcm-zoB7iVvZq1hY9smhkyedJc9xUiatLekEdelpFtNTy3WeCvcyP-Vn_EgL6URx8tooM3siG-s7q7LW_iWI0QnPxxA7qAo1Euf1fdiVO7U8QP2EsoQxLNgZdgTSbJFXgtM1klQELiEk5s7fW7aoVM9fA"
+
+ function getDogs(location, limit) {
         
-//         $.ajax({
-//         url: 'https://api.petfinder.com/v2/animals?type=dog&status=adoptable&has_photo=1',
-//         type: 'GET',
-//         headers: {
-//             'Authorization': `Bearer ${authToken}`
-//         },
-//         data: {
-//             'type': 'dog',
-//             'location': '97215',
-//             'limit': '5',
-//             'fields': 'name,age,gender,breeds,photos'
-//         }
-//     })
-//     .done(function(data) {
-//         console.log(data);
-//         const dogContainer = $('#additionalDogEl');
-//         data.animals.forEach(dog => {
-//             const card = $('<div></div>').addClass('card');
-//             const name = $('<h2></h2>').text(dog.name);
-//             const age = $('<p></p>').text(`Age: ${dog.age}`);
-//             const gender = $('<p></p>').text(`Gender: ${dog.gender}`);
-//             const breed = $('<p></p>').text(`Breed: ${dog.breeds.primary}`);
-//             const photo = $('<img>').attr('src', dog.photos[0].medium);
-//             card.append(name, age, gender, breed, photo);
-//             dogContainer.append(card);
-//         });
-//     })
-//     .fail(function(jqXHR, textStatus, errorThrown) {
-//         console.log(`AJAX request failed: ${textStatus}, ${errorThrown}`);
-//     });
+         $.ajax({
+         url: 'https://api.petfinder.com/v2/animals?type=dog&status=adoptable&has_photo=1',
+         type: 'GET',
+         headers: {
+             'Authorization': `Bearer ${authToken}`
+         },
+         data: {
+             'type': 'dog',
+             'location': '97215',
+             'limit': '5',
+             'fields': 'name,age,gender,breeds,photos'
+         }
+     })
+     .done(function(data) {
+         console.log(data);
+         const dogContainer = $('#additionalDogEl');
+         data.animals.forEach(dog => {
+             const card = $('<div></div>').addClass('card');
+             const name = $('<h2></h2>').text(dog.name);
+             const age = $('<p></p>').text(`Age: ${dog.age}`);
+             const gender = $('<p></p>').text(`Gender: ${dog.gender}`);
+             const breed = $('<p></p>').text(`Breed: ${dog.breeds.primary}`);
+             const photo = $('<img>').attr('src', dog.photos[0].medium);
+             card.append(name, age, gender, breed, photo);
+             dogContainer.append(card);
+         });
+     })
+     .fail(function(jqXHR, textStatus, errorThrown) {
+         console.log(`AJAX request failed: ${textStatus}, ${errorThrown}`);
+     });
     
-//     }
-//     getDogs('97215', '5');
+     }
+     getDogs('97215', '5');
 
     const dogOfficesURL = `https://api.petfinder.com/v2/organizations?type=vet,shelter&location=97215&limit=5`;
 
