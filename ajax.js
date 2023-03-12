@@ -7,33 +7,36 @@ const petSecret = 'bx9RsyfRlesCpNa5SnRXTox2w2NvWSOSYy8MWGVf'
 
 const dogURL = `https://api.petfinder.com/v2/animals?type=dog&location=97215&limit=3&fields=name,age,gender,breeds,photos`;
 
-let authToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ2TzN5YnBzZkpJNmdpM1VRNGJQbUxXOTFkRnNNOHpPaDVUc2duampSUVkwc1RrTWdnVyIsImp0aSI6ImQ5M2ExZGMyOWE2ZTQ2YjY2MmNjOWMwMDkwM2VlNWU1YjVkNTlhNDQ5ZjdiN2NlMjJhNzFhZjk1ZTRjMDk1N2RjZWIxMjE4NjAwYTc3ZmZmIiwiaWF0IjoxNjc4NTkyOTI5LCJuYmYiOjE2Nzg1OTI5MjksImV4cCI6MTY3ODU5NjUyOSwic3ViIjoiIiwic2NvcGVzIjpbXX0.vZDwgBSHfNCBfiV8sj4bvK03yaQ6TmSSl78vhbcTDfKAY6xNQ6kgCjk_0eAUhNXTHeEozcTiKa2mXQoxOOISaegvu_oiNLryLfIPey1NdWhNI8ccn8MoVhFet4iirMe8Yh0Kive3ArhMbAkNh8P4-SuDMem3ox8LPXdvxpwA5n8Dr4iS1ji1VyCbmWw2JqKjxxYnzns1xgVlC7A9UerQ55Exizd0nw9_fJOFWm8ppe27wK5vodG1_yVase2WGzLazTQpushHDnoTsdTf7oQM7l0UXyQl-gyV_5ZwkyjyjX6Qc1akgOXBQNA-UBnot_aU1AF4VmgbQwLyG2chkQT_Rw'
-// let authTokenExpirationTime;
+//let authToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ2TzN5YnBzZkpJNmdpM1VRNGJQbUxXOTFkRnNNOHpPaDVUc2duampSUVkwc1RrTWdnVyIsImp0aSI6ImQ5M2ExZGMyOWE2ZTQ2YjY2MmNjOWMwMDkwM2VlNWU1YjVkNTlhNDQ5ZjdiN2NlMjJhNzFhZjk1ZTRjMDk1N2RjZWIxMjE4NjAwYTc3ZmZmIiwiaWF0IjoxNjc4NTkyOTI5LCJuYmYiOjE2Nzg1OTI5MjksImV4cCI6MTY3ODU5NjUyOSwic3ViIjoiIiwic2NvcGVzIjpbXX0.vZDwgBSHfNCBfiV8sj4bvK03yaQ6TmSSl78vhbcTDfKAY6xNQ6kgCjk_0eAUhNXTHeEozcTiKa2mXQoxOOISaegvu_oiNLryLfIPey1NdWhNI8ccn8MoVhFet4iirMe8Yh0Kive3ArhMbAkNh8P4-SuDMem3ox8LPXdvxpwA5n8Dr4iS1ji1VyCbmWw2JqKjxxYnzns1xgVlC7A9UerQ55Exizd0nw9_fJOFWm8ppe27wK5vodG1_yVase2WGzLazTQpushHDnoTsdTf7oQM7l0UXyQl-gyV_5ZwkyjyjX6Qc1akgOXBQNA-UBnot_aU1AF4VmgbQwLyG2chkQT_Rw'
+let authTokenExpirationTime;
 
-// function getToken() {
-//   // Check if the token has expired
-//   if (!authToken || new Date() >= authTokenExpirationTime) {
-//     // Make a request to the authentication endpoint to obtain a new token
-//     $.ajax({
-//       type: "POST",
-//       url: "https://api.petfinder.com/v2/oauth2/token",
-//       data: {
-//         grant_type: "client_credentials",
-//         client_id: "${petKey}",
-//         client_secret: "${petSecret}"
-//       }
-//     })
-//     .done(function(response) {
-//         console.log(response);
-//       authToken = response.access_token;
-//       // Set the expiration time for the new token to one hour from the current time
-//       authTokenExpirationTime = new Date().getTime() + response.expires_in * 1000;
-//     });
-//   }
+function getToken() {
 
-// }
+  // Check if the token has expired
+   //if (!authToken || new Date() >= authTokenExpirationTime) {
+    // Make a request to the authentication endpoint to obtain a new token
+    $.ajax({
+       type: "POST",
+       url: "https://api.petfinder.com/v2/oauth2/token",
+       data: {
+         grant_type: "client_credentials",
+         client_id: "vO3ybpsfJI6gi3UQ4bPmLW91dFsM8zOh5TsgnjjRQY0sTkMggW",
+         client_secret: "bx9RsyfRlesCpNa5SnRXTox2w2NvWSOSYy8MWGVf",
+       }
+     })
+     .done(function(response) {
+         console.log(response);
+       let authToken = response.access_token;
+       console.log(authToken);
+       // Set the expiration time for the new token to one hour from the current time
+       authTokenExpirationTime = new Date().getTime() + response.expires_in * 1000;
+     });
+   }
 
-// getToken();
+
+
+ getToken();
+ console.log(authToken)
 
 // function getDogs(location, limit) {
         
