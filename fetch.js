@@ -55,7 +55,7 @@ const dogOfficesURL = `https://api.petfinder.com/v2/organizations?type=vet,shelt
 
 fetch(dogOfficesURL, {
     headers: {
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${authToken}`
     }
 })
 .then(response => response.json())
