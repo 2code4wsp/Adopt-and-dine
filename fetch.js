@@ -1,4 +1,5 @@
 
+
 //const location = '{city, state, zip}';
 //const limit = 3;
 
@@ -72,12 +73,12 @@ getDogs(zip, 3);
 fetch(dogURL, {
     headers: {
         Authorization: `Bearer $petKey`
+
     }
 })
 .then(response => response.json())
 .then(data => {
     //handle doggy data
-   console.log(data);
     const dogContainer = document.getElementById('additionalDogEl');
     data.animals.forEach(dog => {
         //create card forEach dog
@@ -101,6 +102,7 @@ fetch(dogURL, {
         photo.src = dog.photos[0].medium;
 
         //add card to dog container
+
         card.appendChild(name);
         card.appendChild(age);
         card.appendChild(gender);
@@ -110,6 +112,7 @@ fetch(dogURL, {
     });
 })
 .catch(error => console.error(error));
+
 
 //fetch vet and shelter data
 const dogOfficesURL = `https://api.petfinder.com/v2/organizations?type=vet,shelter&location=${location}&limit=${limit}%key=${petKey}`;
@@ -167,6 +170,43 @@ fetch(dogOfficesURL, {
 //Parse response - name, age, breed, gender, location
 //Dynamic html element creation to house data
 
+//Event Listener for tab scrolling to respective section when clicked
+function scrollToSection(id) {
+  const section = document.querySelector(id);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+const aboutTab = document.querySelector('a[href="#aboutEl"]');
+aboutTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#aboutEl');
+});
+
+const localRestaurantTab = document.querySelector('a[href="#localRestaurantEl"]');
+localRestaurantTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#localRestaurantEl');
+});
+
+const additionalDogTab = document.querySelector('a[href="#additionalDogEl"]');
+additionalDogTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#additionalDogEl');
+});
+
+const vetTab = document.querySelector('a[href="#vetEl"]');
+vetTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#vetEl');
+});
+
+const shelterTab = document.querySelector('a[href="#shelterEl"]');
+shelterTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#shelterEl');
+});
 
 
 //Event listeners for each button:
@@ -266,3 +306,40 @@ button.addEventListener('click', function() {
 //Authenticate request/handle exceptions
 //Parse response - name, cuisine, location, price-index, customer rating
 //Dynamic html element creation to house data
+
+
+//client ID: zvRMwD-SajCgvo7-IcT0OA
+//apiK: V6Oo4GKHu2XFdHcHwlkim9pyL6uVs2rQIMVF5x6oqS-Ng_yetXyLZyRS2eGcwIncN0SQbKbl6rvKMxtwy8Hfm5AVSR6ftj7MAO4PNEANLhHmNN5RoZHWdf87tccGZHYx
+
+//Sending a POST request with fetch
+const dineLocation = '{city, state, zip}';
+const limit = 20; //does this need to be in brackets?
+const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer V6Oo4GKHu2XFdHcHwlkim9pyL6uVs2rQIMVF5x6oqS-Ng_yetXyLZyRS2eGcwIncN0SQbKbl6rvKMxtwy8Hfm5AVSR6ftj7MAO4PNEANLhHmNN5RoZHWdf87tccGZHYx'
+    }
+  };
+  
+  fetch('https://api.yelp.com/v3/businesses/search?location=${location}&term=restaurants&categories=&attributes=dog_friendly&sort_by=best_match&limit=20', options)
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
+
+//use AJAX to call Yelp
+$.ajax(setting).done(function (response) {
+    var results = response.businesses;
+
+    //hold search results
+    const foodData = document.createElement('div');
+
+    //display results
+results.forEach(function(business) {
+    var businessInfo = 
+
+
+    //btnElement
+    //error handling
+})
+}
