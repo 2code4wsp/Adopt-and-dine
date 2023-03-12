@@ -22,7 +22,7 @@
     <!-- navbar-fixed = fixes header at the top of the page and makes it always visible even when scrolling-->
     <header id="headerEl" class="headerEl green darken-2 white-text">
         <!-- Add grass background image-->
-        <div class="subHeader" >
+        <div class="subHeader" > 
             <!-- add header and center class maybe -->
             <h1 id="adoptAndDine" class="">Adopt and Dine</h1>
             <!-- Added headerImgCircle class-->
@@ -35,7 +35,7 @@
             <!-- Background Color Sheme: green and purple -->
             <!-- flow-text = materialize class to make text more responsive and prominent-->
             <!-- nav-wrapper = materialize class used to defin container element that wraps around the navigation bar component-->
-            <div class="row nav-wrapper green darken-2">
+            <!--<div class="row nav-wrapper green darken-2"> -->
                 <!--enclosed nav elements in ul element to manipulate to the right-->
                 <ul id="navList" class="right">
                     <!-- Using js add a class "active" to <li> elements when (<li> #navLink) clicked-->
@@ -51,16 +51,14 @@
                     <li id="navLink" class="tab navLink teal lighten-4"><a href="#tab5"
                             class="teal-text text-darken-4">Shelters</a></li>
                 </ul>
-    
-                
-            </div>
+            <!-- </div> -->
         </nav>
 
     </header>
     <!-- added header and center -->
     <section id="searchBar" class="row searchBar center">
         <section role="search">
-            <form action="#" method="get">
+            <form action="#" method="get" class="m-t-20">
                 <!-- Used offset-s2 to center search field-->
                 <!-- fieldset use to be green accent-1-->
                 <fieldset class="col s8 offset-s2">
@@ -81,6 +79,12 @@
             </form>
         </section>
     </section>
+
+    <section id="aboutEl" class="aboutEl container">
+        <h3>About Us</h3>
+        <p id="aboutText" class="aboutText center-align">With so many wonderful dogs in need of homes and so many wonderful people in need of dogs, Adopt and Dine wanted to create a platform to introduce people to their new furry friend and a great new restaurant so that they can dine together after adoption. </p>
+    </section>
+
     <!-- Take up 9 columns for search results, as three cards stacked on eachother-->
     <!--Make text purple for restaurant matches-->
     <section id="primaryMatchEl" class="container row primaryMatchEl purple-text text-lighten-1">
@@ -127,12 +131,7 @@
         </div>
        
     </section>
-    <section id="aboutEl" class="aboutEl">
-        <h3>About Us</h3>
-        <p id="aboutText" class="aboutText">With so many wonderful dogs in need of homes and so many wonderful people in need of dogs, we want to introduce them to each other and to a great new restaurant at which they can dine together.</p>
-    </section>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="ajax.js"></script>
+    <script src="fetch.js"></script>
 </body>
 
 </html>
