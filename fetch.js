@@ -1,13 +1,74 @@
 
-const location = '{city, state, zip}';
-const limit = 3;
+//const location = '{city, state, zip}';
+//const limit = 3;
+
+//const petKey = 'vO3ybpsfJI6gi3UQ4bPmLW91dFsM8zOh5TsgnjjRQY0sTkMggW'
+//const petSecret = 'bx9RsyfRlesCpNa5SnRXTox2w2NvWSOSYy8MWGVf'
 
 //Fetch doggy data
-const dogURL = `https://api.petfinder.com/v2/animals?type=dog&location=${location}&limit=${limit}&fields=name,age,gender,breeds,photos&key=${petKey}`;
+//const dogURL = `https://api.petfinder.com/v2/animals?type=dog&location=${location}&limit=${limit}&fields=name,age,gender,breeds,photos&key=${petKey}`;
 
-const petKey = 'vO3ybpsfJI6gi3UQ4bPmLW91dFsM8zOh5TsgnjjRQY0sTkMggW'
-const petSecret = 'bx9RsyfRlesCpNa5SnRXTox2w2NvWSOSYy8MWGVf'
 
+//zipcode inpput value
+var zip = document.getElementById('s').value
+
+function getauth (){
+$.ajax({
+  url: 'https://api.petfinder.com/v2/oauth2/token',
+  type: 'POST',
+  data: {
+    'grant_type': 'client_credentials',
+    'client_id': 'vO3ybpsfJI6gi3UQ4bPmLW91dFsM8zOh5TsgnjjRQY0sTkMggW',
+    'client_secret': 'bx9RsyfRlesCpNa5SnRXTox2w2NvWSOSYy8MWGVf',
+  },
+  success: function(response) {
+    console.log(response.access_token);
+  },
+  error: function(xhr, status, error) {
+    console.error(error);
+  }
+})
+};
+
+function getDogs(location, limit) {
+        
+  $.ajax({
+  url: 'https://api.petfinder.com/v2/animals?type=dog&status=adoptable&limit=3',
+  type: 'GET',
+  headers: {
+      'Authorization': `Bearer ${access_token}`
+  },
+  data: {
+      'type': 'dog',
+      //changed from 'zipcode' to zip variable called above
+      'location': zip,
+      'limit': '3',
+      'fields': 'name,age,gender,breeds,photos'
+  }
+})
+.done(function(data) {
+  console.log(data);
+  const dogContainer = $('#additionalDogEl');
+  data.animals.forEach(dog => {
+      const card = $('<div></div>').addClass('card');
+      const name = $('<h2></h2>').text(dog.name);
+      const age = $('<p></p>').text(`Age: ${dog.age}`);
+      const gender = $('<p></p>').text(`Gender: ${dog.gender}`);
+      const breed = $('<p></p>').text(`Breed: ${dog.breeds.primary}`);
+      const photo = $('<img>').attr('src', dog.photos[0].medium);
+      card.append(name, age, gender, breed, photo);
+      dogContainer.append(card);
+  });
+})
+.fail(function(jqXHR, textStatus, errorThrown) {
+  console.log(`AJAX request failed: ${textStatus}, ${errorThrown}`);
+});
+}
+getDogs(zip, 3);
+
+
+
+/*
 fetch(dogURL, {
     headers: {
         Authorization: `Bearer $petKey`
@@ -55,7 +116,7 @@ const dogOfficesURL = `https://api.petfinder.com/v2/organizations?type=vet,shelt
 
 fetch(dogOfficesURL, {
     headers: {
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${authToken}`
     }
 })
 .then(response => response.json())
@@ -100,7 +161,7 @@ fetch(dogOfficesURL, {
     });
 })
 .catch(error => console.error(error));
-
+*/
 
 //Authenticate request/handle exceptions
 //Parse response - name, age, breed, gender, location
