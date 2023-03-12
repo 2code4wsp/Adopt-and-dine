@@ -1,18 +1,22 @@
-const token = '{YOUR_ACCESS_TOKEN}';
+
 const location = '{city, state, zip}';
 const limit = 3;
 
 //Fetch doggy data
-const dogURL = `https://api.petfinder.com/v2/animals?type=dog&location=${location}&limit=${limit}&fields=name,age,gender,breeds,photos`;
+const dogURL = `https://api.petfinder.com/v2/animals?type=dog&location=${location}&limit=${limit}&fields=name,age,gender,breeds,photos&key=${petKey}`;
+
+const petKey = 'vO3ybpsfJI6gi3UQ4bPmLW91dFsM8zOh5TsgnjjRQY0sTkMggW'
+const petSecret = 'bx9RsyfRlesCpNa5SnRXTox2w2NvWSOSYy8MWGVf'
 
 fetch(dogURL, {
     headers: {
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer $petKey`
     }
 })
 .then(response => response.json())
 .then(data => {
     //handle doggy data
+   console.log(data);
     const dogContainer = document.getElementById('additionalDogEl');
     data.animals.forEach(dog => {
         //create card forEach dog
@@ -36,13 +40,18 @@ fetch(dogURL, {
         photo.src = dog.photos[0].medium;
 
         //add card to dog container
+        card.appendChild(name);
+        card.appendChild(age);
+        card.appendChild(gender);
+        card.appendChild(breed);
+        card.appendChild(photo);
         dogContainer.appendChild(card);
     });
 })
 .catch(error => console.error(error));
 
 //fetch vet and shelter data
-const dogOfficesURL = `https://api.petfinder.com/v2/organizations?type=vet,shelter&location=${location}&limit=${limit}`;
+const dogOfficesURL = `https://api.petfinder.com/v2/organizations?type=vet,shelter&location=${location}&limit=${limit}%key=${petKey}`;
 
 fetch(dogOfficesURL, {
     headers: {
@@ -92,56 +101,6 @@ fetch(dogOfficesURL, {
 })
 .catch(error => console.error(error));
 
-//fetch vet and shelter data
-const dogOfficesURL = `https://api.petfinder.com/v2/organizations?type=vet,shelter&location=${location}&limit=${limit}`;
-
-fetch(dogOfficesURL, {
-    headers: {
-        Authorization: `Bearer ${token}`
-    }
-})
-.then(response => response.json())
-.then(data => {
-    //handle vet shelter data
-    const vetContainer = document.getElementById('vetEl');
-    const shelterContainer = document.getElementById('shelterEl');
-
-    data.organizations.forEach(org => {
-        //create a card forEach
-        const card = document.createElement('div');
-        card.classList.add('card');
-
-        //add org info to card
-        const name = document.createElement('h2');
-        name.textContent = org.name;
-
-        const address = document.createElement('p');
-        address.textContent = `Address: ${org.address.address1}, ${org.address.city}, ${org.address.state}, ${org.address.postcode}`;
-
-        const phone = document.createElement('p');
-        phone.textContent = `Phone: ${org.phone}`;
-
-        const website = document.createElement('a');
-        website.href = org.website;
-        website.textContent = org.website;
-
-        //add elements to card
-        card.appendChild(name);
-        card.appendChild(address);
-        card.appendChild(phone);
-        card.appendChild(website);
-
-        //place card in correct container
-        if (org.type === 'vet') {
-            vetContainer.appendChild(card);
-        } else if (org.type === 'shelter') {
-            shelterContainer.appendChild(card);
-
-        }
-
-    });
-})
-.catch(error => console.error(error));
 
 //Authenticate request/handle exceptions
 //Parse response - name, age, breed, gender, location
