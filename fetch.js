@@ -60,6 +60,19 @@ const options = {
     .then(response => console.log(response))
     .catch(err => console.error(err));
 
-//add event listener for search
+//use AJAX to call Yelp
+$.ajax(setting).done(function (response) {
+    var results = response.businesses;
 
-//
+    //hold search results
+    const foodData = document.createElement('div');
+
+    //display results
+results.forEach(function(business) {
+    var businessInfo = 
+
+
+    //btnElement
+    //error handling
+})
+}
