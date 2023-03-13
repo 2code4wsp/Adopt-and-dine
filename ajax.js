@@ -66,11 +66,11 @@ function getToken() {
          console.log(data);
          const dogContainer = $('#additionalDogEl');
          data.animals.forEach(dog => {
-             const card = $('<div></div>').addClass('card');
-             const name = $('<h2></h2>').text(dog.name);
-             const age = $('<p></p>').text(`Age: ${dog.age}`);
-             const gender = $('<p></p>').text(`Gender: ${dog.gender}`);
-             const breed = $('<p></p>').text(`Breed: ${dog.breeds.primary}`);
+             const card = $('<div>').addClass('card');
+             const name = $('<h2>').text(dog.name);
+             const age = $('<p>').text(`Age: ${dog.age}`);
+             const gender = $('<p>').text(`Gender: ${dog.gender}`);
+             const breed = $('<p>').text(`Breed: ${dog.breeds.primary}`);
              const photo = $('<img>').attr('src', dog.photos[0].medium);
              card.append(name, age, gender, breed, photo);
              dogContainer.append(card);
@@ -81,7 +81,7 @@ function getToken() {
      });
     
      }
-     //getDogs(location, '5');
+    
 
     const dogOfficesURL = `https://api.petfinder.com/v2/organizations?type=vet,shelter&location=97215&limit=5`;
 
@@ -132,5 +132,4 @@ function getToken() {
         });
     }
 
-//getVetShelters(location, '5');
 
