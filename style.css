@@ -140,7 +140,7 @@ background-size: cover;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  
   
 }
 
@@ -181,3 +181,13 @@ background-size: cover;
   flex-wrap: wrap;
   max-height: fit-content;
 }
+
+
+.card-content {
+  margin-left: 25px;
+ }
+ 
+ .card img {
+   margin-top: 15px;
+ 
+ }

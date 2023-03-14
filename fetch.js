@@ -69,7 +69,7 @@ function getDogs(zipCode, limit) {
             const link = $('<a></a>').attr('href', dog.url).text('Adopt Me!');
             const photo = $('<img>').attr('src', dog.photos[0].medium).addClass('responsive-img');
           
-            const cardContent = $('<div></div>').addClass('card-content').append(name, age, gender, breed, link);
+            const cardContent = $('<div></div>').addClass('card-content').append(name, age, gender, breed, link, photo);
             const cardImage = $('<div></div>').addClass('card-image').append(photo);
           
             const row = $('<div></div>').addClass('row').append(
