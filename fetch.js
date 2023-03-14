@@ -84,6 +84,45 @@ function getDogs(zipCode, limit) {
     .fail(function(jqXHR, textStatus, errorThrown) {
         console.log(`AJAX request failed: ${textStatus}, ${errorThrown}`);
     });
+
+})
+.catch(error => console.error(error));
+
+
+//Event Listener for tab scrolling to respective section when clicked
+function scrollToSection(id) {
+  const section = document.querySelector(id);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+const aboutTab = document.querySelector('a[href="#aboutEl"]');
+aboutTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#aboutEl');
+});
+
+const dogTipsTab = document.querySelector('a[href="#primaryMatchEl"]');
+dogTipsTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#primaryMatchEl');
+});
+
+const additionalDogTab = document.querySelector('a[href="#additionalDogEl"]');
+additionalDogTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#additionalDogEl');
+});
+
+const vetTab = document.querySelector('a[href="#vetEl"]');
+vetTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#vetEl');
+});
+
+
+
     
     };
 
@@ -100,6 +139,7 @@ function getDogs(zipCode, limit) {
             success: function(data) {
                 console.log(data);
                 const orgContainer = $('#vetEl');
+
         
                 $.each(data.organizations, function(location, org) {
                     const card = $('<div>').addClass('card');
@@ -154,3 +194,49 @@ function getDogs(zipCode, limit) {
     
     
 
+const requestURL = 'https://dogapi.dog/api/v2'
+
+function getDogKnowledge() {
+    $.ajax({
+        url: 'https://dogapi.dog/api/v2/facts',
+        type: 'GET',
+        dataType: 'json',
+        headers: {
+          'accept': 'application/json'
+        },
+        data: {
+          'limit': '5'
+        },
+        success: function(response) {
+        console.log(response);
+          var dogFactEl = $('#dogFactEl');
+          $.each(response.data, function(index, fact) {
+            var card = $('<div>').addClass('card');
+            var content = $('<div>').addClass('card-content');
+            var body = $('<p>').text(fact.attributes.body);
+            content.append(body);
+            card.append(content);
+            dogFactEl.append(card);
+          });
+        },
+        error: function(xhr, status, error) {
+          console.log(error);
+        }
+      });
+      //get facts for dog breeds
+      $.ajax({
+        url: 'https://dogapi.dog/api/v2/breeds'
+        type: 'GET'
+        dataType: 'json'
+        headers: {
+          'accept': 'application/json'
+        },
+        data: {
+          'limit': '5'
+        },
+        success: function(response) {
+          console.log(response);
+        }
+      })
+    }
+    
