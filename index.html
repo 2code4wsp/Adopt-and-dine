@@ -14,7 +14,7 @@
     <!--ajax-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Adopt & Dine</title>
+    <title>Fetch Your Furry Friend</title>
 </head>
 
 <body class="bg-color blue lighten-4">
@@ -24,7 +24,7 @@
         <!-- Add grass background image-->
         <div class="subHeader" > 
             <!-- add header and center class maybe -->
-            <h1 id="adoptAndDine" class="">Adopt and Dine</h1>
+            <h1 id="fetchFurryFriend" class="">Fetch Your Furry Friend</h1>
             <!-- Added headerImgCircle class-->
             <div class="headerImgCircle">
                 <img class="headerImg" src="adopt-dine-headshot.png" alt="An adoption dog" >
@@ -45,7 +45,7 @@
                     <li id="navLink" class="tab navLink indigo lighten-3"><a href="#additionalDogEl"
                             class="indigo-text text-darken-4">Adopt</a></li>
                     <li id="navLink" class="tab navLink lime lighten-3"><a href="#primaryMatchEl"
-                            class="indigo-text text-darken-4">Dine</a></li>
+                            class="indigo-text text-darken-4">Dog Knowledge</a></li>
                     <li id="navLink" class="tab navLink teal lighten-4"><a href="#shelAndVetEl"
                             class="teal-text text-darken-4">Shelters/Veterinarians</a></li>
                 </ul>
@@ -60,7 +60,7 @@
                 <!-- Used offset-s2 to center search field-->
                 <!-- fieldset use to be green accent-1-->
                 <fieldset class="col s8 offset-s2">
-                    <legend id="searchFieldLegend" class="black-text">Search the RescueGroups.org API:</legend>
+                    <legend id="searchFieldLegend" class="black-text">Search PetFinder:</legend>
                     <label for="s">
                         <input type="search" name="s" id="s" placeholder="Enter a city, state or zip code..."
                             maxlength="200" />
@@ -80,22 +80,21 @@
 
     <section id="aboutEl" class="aboutEl container">
         <h3>About Us</h3>
-        <p id="aboutText" class="aboutText center-align">With so many wonderful dogs in need of homes and so many wonderful people in need of dogs, Adopt and Dine wanted to create a platform to introduce people to their new furry friend and a great new restaurant so that they can dine together after adoption. We hope you and your companion enjoy your first meal together, bone-app&eacute;tit!</p>
+        <p id="aboutText" class="aboutText center-align">With so many wonderful dogs in need of homes and so many wonderful people in need of dogs, Fetch Your Furry Friend wanted to create a platform to introduce people to their new furry friend, find pertinant information about. We hope you and your companion all the best.</p>
     </section>
 
     <!-- Take up 9 columns for search results, as three cards stacked on eachother-->
     <!--Make text purple for restaurant matches-->
     <section id="primaryMatchEl" class="container row primaryMatchEl purple-text text-lighten-1">
-        <div id="localRestaurantEl" class="col s6 localRestaurantEl">
+        <div id="dogFactEl" class="col s6 dogFactEl">
             <!-- Use JS to populate location name where location is currently-->
-            <h2 id="restaurantLocation">Location</h2>
+            <!--<h2 id="dogFunFaq">Location</h2>-->
             <img src="" alt="">
         </div>
-        <ul id="restaurantList" class="col s6 restaurantList">
-            <li class="restaurantEl">a</li>
-            <li class="restaurantEl">b</li>
-            <li class="restaurantEl">c</li>
-            <li class="restaurantEl">d</li>
+        <ul id="dogInfoList" class="col s6 dogInfoList">
+            <li class="breedsEl">a</li>
+            <li class="factsEl">b</li>
+            <li class="groupsEl">c</li>
         </ul>
     </section>
     <!--Make text purple (maybe different color) for dog matches-->
