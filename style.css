@@ -132,3 +132,13 @@ background-size: cover;
  #searchFieldLegend {
   font-size: 1.5em;
  }
+
+.card-content {
+ margin-left: 25px;
+}
+
+.card img {
+  margin-top: 15px;
+
+}
+ 
