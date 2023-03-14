@@ -140,7 +140,7 @@ function getDogs(zipCode, limit) {
               $.each(response.data, function(index, fact) {
                 var card = $('<div>').addClass('card');
                 var content = $('<div>').addClass('card-content');
-                var body = $('<p>').text(fact.attributes.body);
+                var body = $('<p>').text(fact.attributes.body).addClass('text');
                 content.append(body);
                 card.append(content);
                 dogFactEl.append(card);

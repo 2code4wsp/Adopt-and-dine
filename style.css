@@ -133,10 +133,15 @@ background-size: cover;
   font-size: 1.5em;
  }
 
+
+ 
 .wrap {
   display: inline-flex;
+  flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  
 }
 
 
@@ -147,6 +152,7 @@ background-size: cover;
   background: #fff;
   height: 300px;
   width: 450px;
+  border: 1px solid purple;
 }
 
 .card-title {
@@ -154,6 +160,24 @@ background-size: cover;
   padding-left: 12px;
 }
 
+
 .card-image {
   max-height: 200px;
+}
+
+
+#dogFactEl{
+  justify-content: center;
+  max-height: 100px;
+  display: flex;
+}
+
+.text{
+  text-align: center;
+}
+
+.vetEl{
+  display:flex;
+  flex-wrap: wrap;
+  max-height: fit-content;
 }
