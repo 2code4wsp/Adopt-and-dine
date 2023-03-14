@@ -147,10 +147,27 @@ background-size: cover;
   display: flex;
   flex-direction:row;
   padding: 15px;
+  height: 300px;
+  width: 450px;
+  border: 1px solid purple;
+  background-image: url("/dog-bones.png");
+  /* so image wont repeat */
+  background-repeat: no-repeat;
+  /* ensures image covers entire element */ 
+  background-size: cover; 
+  
+  /*display: flex;
+  flex-direction:row;
+  padding: 15px;
   background: #fff;
   height: 300px;
   width: 450px;
   border: 1px solid purple;
+  background-image: url("/fur-background.png");
+  /* so image wont repeat */
+  /*background-repeat: no-repeat;
+  /* ensures image fits inside element */ 
+  /*background-size: contain; */
 }
 
 .card-title {
@@ -158,6 +175,15 @@ background-size: cover;
   padding-left: 12px;
 }
 
+p {
+  color: black;
+  font-size: larger;
+  font-weight: 300;
+}
+
+a {
+  font-size: x-large;
+}
 
 .card-image {
   max-height: 200px;
