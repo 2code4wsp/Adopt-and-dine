@@ -207,10 +207,10 @@ additionalDogTab.addEventListener('click', function(e) {
   scrollToSection('#additionalDogEl');
 });
 
-const vetTab = document.querySelector('a[href="#vetEl"]');
+const vetTab = document.querySelector('a[href="#shelAndVetEl"]');
 vetTab.addEventListener('click', function(e) {
   e.preventDefault();
-  scrollToSection('#vetEl');
+  scrollToSection('#shelAndVetEl');
 });
 
 const shelterTab = document.querySelector('a[href="#shelterEl"]');
