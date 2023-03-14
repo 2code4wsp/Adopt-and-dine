@@ -6,7 +6,7 @@ $('#searchBtn').click(function() {
     const org = 'vet, shelter';
     getDogs(zipCode, '5');
     getVetShelters(zipCode);
-    getDogKnowledge();
+    getDogKnowledge('#dogFactEl');
 });
 
 
@@ -122,8 +122,8 @@ function getDogs(zipCode, limit) {
         });
     };
 
-   function getDogKnowledge(facts, dogFactEl) { 
-
+   function getDogKnowledge(dogFactEl) { 
+    
     $.ajax({
         url: 'https://dogapi.dog/api/v2/facts',
         type: 'GET',
@@ -136,9 +136,9 @@ function getDogs(zipCode, limit) {
         },
         success: function(response) {
         console.log(response);
-          var factContainer = $('#dogFactEl');
+          // var dogFactEl = ('#dogFactEl');
       
-          $.each(facts, function(index, fact) {
+          $.each(response.facts, function(index, fact) {
             var card = $('<div>').addClass('card');
             var content = $('<div>').addClass('card-content');
             var body = $('<p>').text(fact.body);
