@@ -70,7 +70,7 @@
                     <!-- dog icon included left of Submit button using materialize icons-->
                     <!-- can use hoverable on any element to make it pop up on hover-->
                     <!-- TODO: change button size to smaller size (btn-small)-->
-                    <button type="submit" title="Search for a new dinner date"
+                    <button type="submit" title="Search for a new dinner date" id="searchBtn"
                         class="btn waves-effect purple lighten-1 hoverable z-depth-3"><i
                             class="material-icons left">pets</i>Submit</button>
                 </fieldset>
@@ -83,51 +83,17 @@
         <p id="aboutText" class="aboutText center-align">With so many wonderful dogs in need of homes and so many wonderful people in need of dogs, Fetch Your Furry Friend wanted to create a platform to introduce people to their new furry friend, find pertinant information about. We hope you and your companion all the best.</p>
     </section>
 
-    <!-- Take up 9 columns for search results, as three cards stacked on eachother-->
-    <!--Make text purple for restaurant matches-->
-    <section id="primaryMatchEl" class="container row primaryMatchEl purple-text text-lighten-1">
-        <div id="dogFactEl" class="col s6 dogFactEl">
-            <!-- Use JS to populate location name where location is currently-->
-            <!--<h2 id="dogFunFaq">Location</h2>-->
-            <img src="" alt="">
-        </div>
-        <ul id="dogInfoList" class="col s6 dogInfoList">
-            <li class="breedsEl">a</li>
-            <li class="factsEl">b</li>
-            <li class="groupsEl">c</li>
-        </ul>
-    </section>
-    <!--Make text purple (maybe different color) for dog matches-->
-    <!-- Generate image of each match alongside text using 
-        <img src="" alt="" class="responsive-img circle" alt=""> for a responsive, circular image-->
-
-    <!-- 6 columns for location and 6 columns for img-->
-    <!-- class="row additionalDogEl purple lighten-3 purple-text text-lighten-1" -->
     <section id="additionalDogEl" class="container row additionalDogEl purple-text text-lighten-1">
-        <div class="col s6">
-            <!-- Use JS to populate dog where Available Friend is currently-->
-            <h2 id="availableFriend">Available Friend</h2>
-            <img src="" alt="">
-        </div>
-                    
+             
     </section>
-    <!--Repeat the same formatting of 9 columns and 3 stacked card for up to id shelterEl-->
+    <section id="dogFactEl" class="container row dogFactEl purple-text text-lighten-1">
+       
+    </section>
     <section id="vetEl" class="container row vetEl purple-text text-lighten-1">
-        <div class="col s6">
-            <!-- Use JS to populate dog where Vet Office is currently-->
-            <h2 id="vetOfficeAvailable">Vet Office</h2>
-            <img src="" alt="">
-        </div>
-       
+        
     </section>
-    <section id="shelterEl" class="container row shelterEl purple-text text-lighten-1">
-        <div class="col s6">
-            <!-- Use JS to populate shelter where Shelter is currently-->
-            <h2 id="shelterName">Shelter</h2>
-            <img src="" alt="">
-        </div>
-       
-    </section>
+    
+    
     <script src="fetch.js"></script>
 </body>
 

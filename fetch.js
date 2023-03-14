@@ -122,34 +122,35 @@ function getDogs(zipCode, limit) {
         });
     };
 
-//    function getDogKnowledge() { 
+   function getDogKnowledge(facts, dogFactEl) { 
 
-//     $.ajax({
-//         url: 'https://dogapi.dog/api/v2/facts',
-//         type: 'GET',
-//         dataType: 'json',
-//         headers: {
-//           'accept': 'application/json'
-//         },
-//         data: {
-//           'limit': '5'
-//         },
-//         success: function(response) {
-//           var facts = response.facts;
-//           var factContainer = $('#dogFactBubbles');
+    $.ajax({
+        url: 'https://dogapi.dog/api/v2/facts',
+        type: 'GET',
+        dataType: 'json',
+        headers: {
+          'accept': 'application/json'
+        },
+        data: {
+          'limit': '5'
+        },
+        success: function(response) {
+        console.log(response);
+          var factContainer = $('#dogFactEl');
       
-//           $.each(facts, function(index, fact) {
-//             var card = $('<div>').addClass('card');
-//             var content = $('<div>').addClass('card-content');
-//             var body = $('<p>').text(fact.body);
+          $.each(facts, function(index, fact) {
+            var card = $('<div>').addClass('card');
+            var content = $('<div>').addClass('card-content');
+            var body = $('<p>').text(fact.body);
       
-//             content.append(body);
-//             card.append(content);
-//             container.append(card);
-//           });
-//         },
-//         error: function(xhr, status, error) {
-//           console.log(error);
-//         }
-//       });
-//     };
+            content.append(body);
+            card.append(content);
+            container.append(card);
+          });
+        },
+        error: function(xhr, status, error) {
+          console.log(error);
+        }
+      });
+    };
+
