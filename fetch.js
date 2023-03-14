@@ -63,7 +63,7 @@ function getDogs(zipCode, limit) {
             uniqueDogs.forEach(dog => {
             const card = $('<div></div>').addClass('card');
             const name = $('<h2></h2>').text(dog.name);
-            const age = $('<p></p>').text(`Age: ${dog.age}`);
+            const age = $('<p></p>').text(`Age: ${dog.age}`).addClass('title');
             const gender = $('<p></p>').text(`Gender: ${dog.gender}`);
             const breed = $('<p></p>').text(`Breed: ${dog.breeds.primary}`);
             const link = $('<a></a>').attr('href', dog.url).text('Adopt Me!');
@@ -122,35 +122,35 @@ function getDogs(zipCode, limit) {
         });
     };
 
-   function getDogKnowledge(dogFactEl) { 
-    
-    $.ajax({
-        url: 'https://dogapi.dog/api/v2/facts',
-        type: 'GET',
-        dataType: 'json',
-        headers: {
-          'accept': 'application/json'
-        },
-        data: {
-          'limit': '5'
-        },
-        success: function(response) {
-        console.log(response);
-          // var dogFactEl = ('#dogFactEl');
-      
-          $.each(response.facts, function(index, fact) {
-            var card = $('<div>').addClass('card');
-            var content = $('<div>').addClass('card-content');
-            var body = $('<p>').text(fact.body);
-      
-            content.append(body);
-            card.append(content);
-            container.append(card);
+   
+    function getDogKnowledge() {
+        $.ajax({
+            url: 'https://dogapi.dog/api/v2/facts',
+            type: 'GET',
+            dataType: 'json',
+            headers: {
+              'accept': 'application/json'
+            },
+            data: {
+              'limit': '5'
+            },
+            success: function(response) {
+            console.log(response);
+              var dogFactEl = $('#dogFactEl');
+              $.each(response.data, function(index, fact) {
+                var card = $('<div>').addClass('card');
+                var content = $('<div>').addClass('card-content');
+                var body = $('<p>').text(fact.attributes.body).addClass('text');
+                content.append(body);
+                card.append(content);
+                dogFactEl.append(card);
+              });
+            },
+            error: function(xhr, status, error) {
+              console.log(error);
+            }
           });
-        },
-        error: function(xhr, status, error) {
-          console.log(error);
-        }
-      });
-    };
+        };
+    
+    
 
