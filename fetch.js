@@ -195,10 +195,10 @@ aboutTab.addEventListener('click', function(e) {
   scrollToSection('#aboutEl');
 });
 
-const localRestaurantTab = document.querySelector('a[href="#localRestaurantEl"]');
-localRestaurantTab.addEventListener('click', function(e) {
+const dogTipsTab = document.querySelector('a[href="#primaryMatchEl"]');
+dogTipsTab.addEventListener('click', function(e) {
   e.preventDefault();
-  scrollToSection('#localRestaurantEl');
+  scrollToSection('#primaryMatchEl');
 });
 
 const additionalDogTab = document.querySelector('a[href="#additionalDogEl"]');
@@ -311,4 +311,54 @@ button.addEventListener('click', function() {
       console.error(error);
     });
 });
+const requestURL = 'https://dogapi.dog/api/v2'
 
+function getApi() {
+  fetch('requestURL')
+  .then(res => res.json())
+  .then(data => console.log(data))
+}
+function getDogKnowledge() {
+    $.ajax({
+        url: 'https://dogapi.dog/api/v2/facts',
+        type: 'GET',
+        dataType: 'json',
+        headers: {
+          'accept': 'application/json'
+        },
+        data: {
+          'limit': '5'
+        },
+        success: function(response) {
+        console.log(response);
+          var dogFactEl = $('#dogFactEl');
+          $.each(response.data, function(index, fact) {
+            var card = $('<div>').addClass('card');
+            var content = $('<div>').addClass('card-content');
+            var body = $('<p>').text(fact.attributes.body);
+            content.append(body);
+            card.append(content);
+            dogFactEl.append(card);
+          });
+        },
+        error: function(xhr, status, error) {
+          console.log(error);
+        }
+      });
+      //get facts for dog breeds
+      $.ajax({
+        url: 'https://dogapi.dog/api/v2/breeds'
+        type: 'GET'
+        dataType: 'json'
+        headers: {
+          'accept': 'application/json'
+        },
+        data: {
+          'limit': '5'
+        },
+        success: function(response) {
+          console.log(response);
+        }
+      })
+    }
+    
