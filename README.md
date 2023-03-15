@@ -41,10 +41,21 @@ Elijah Morris - https://github.com/Morriseli
 
 
 
+
 [Your landing page should look something like this!](screenshot.png)
 
+    ```md
+    ![alt text](assets/IMG_9970.jpg)
+    ```
 
+## Installation
+There are no tools necessary to download for this application. You may however, create a login profile if desired through the Petfinder application.
 
+## Contributors
+Carolina Ramirez Islas - https://github.com/CarolinaRaIs
+Alicia Keberle - https://github.com/keberlea
+Kirk Steele - https://github.com/BanditHeelerPDX
+Elijah Morris - https://github.com/Morriseli
 
 ## Licensing
 

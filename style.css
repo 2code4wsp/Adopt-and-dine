@@ -27,7 +27,7 @@ padding-left: 10px;
 padding-right: 10px;
 /* include path to grass background image */
 /* background-image: url("/grass-water-splash.jpg");*/
-background-image: url("/bottom-grass-water-splash.jpg");
+background-image: url("bottom-grass-water-splash.jpg");
 /* so image wont repeat */
 background-repeat: no-repeat;
 /* ensures image covers entire element */ 
@@ -74,7 +74,7 @@ background-size: cover;
 
 .nav-wrapper {
     line-height: 70px;
-    background-image: url("/bottom-grass-water-splash.jpg");
+    background-image: url("bottom-grass-water-splash.png");
     /* so image wont repeat */
     background-repeat: no-repeat;
     /* ensures image covers entire element */ 
@@ -133,41 +133,23 @@ background-size: cover;
   font-size: 1.5em;
  }
  
-/* .wrap {
+ .wrap {
   display: inline-flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  
 }
 
 
  .card {
-  display: flex;
-  flex-direction:row;
+  display: inline-flex;
+  flex-wrap:wrap;
   padding: 15px;
-  height: 300px;
-  width: 450px;
   border: 1px solid purple;
-  background-image: url("/dog-bones.png");
+  background-image: url("dog-bones.png");
   /* so image wont repeat */
   background-repeat: no-repeat;
   /* ensures image covers entire element */ 
   background-size: cover; 
-  
-  /*display: flex;
-  flex-direction:row;
-  padding: 15px;
-  background: #fff;
-  height: 300px;
-  width: 450px;
-  border: 1px solid purple;
-  background-image: url("/fur-background.png");
-  /* so image wont repeat */
-  /*background-repeat: no-repeat;
-  /* ensures image fits inside element */ 
-  /*background-size: contain; */
+
 } 
 
 .card-title {
@@ -185,25 +167,52 @@ a {
   font-size: x-large;
 }
 
+p {
+  color: black;
+  font-size: larger;
+  font-weight: 300;
+  
+}
+
+a {
+  font-size: x-large;
+}
+
 .card-image {
   max-height: 200px;
 }
 
-
-#dogFactEl{
-  width: 18%;
+.dogFactEl{
+  width: 200px; 
   margin: 0 25px;
-  height: 50px;
+  height: fit-content;
   display: flex;
 }
+
 
 .text{
   text-align: center;
 }
 
-.vetEl{
+
+.vetEl.card{
   margin: 25px 25px;
-  display:flex;
+  max-height: 100px;
+  max-width: 400px;
+  display: flex;
   flex-wrap: wrap;
-  height: 100px;
-}  */
+}
+
+
+
+.card-content {
+  margin-left: 25px;
+ }
+ 
+ .card img {
+   margin-top: 15px;
+ 
+ }
+
+ 
+

@@ -44,7 +44,7 @@ function getDogs(zipCode, limit) {
             'type': 'dog',
             'location': zipCode,
             'limit': '15',
-            'fields': 'name,age,gender,breeds,photos',
+            'fields': 'name,age,gender,breeds,photo',
         }
     })
     .done(function(data) {
@@ -67,14 +67,14 @@ function getDogs(zipCode, limit) {
             const gender = $('<p></p>').text(`Gender: ${dog.gender}`);
             const breed = $('<p></p>').text(`Breed: ${dog.breeds.primary}`);
             const link = $('<a></a>').attr('href', dog.url).text('Adopt Me!');
-            const photo = $('<img>').attr('src', dog.photos[0].medium).addClass('responsive-img');
+            //const photo = $('<img>').attr('src', dog.photos[0].medium).addClass('responsive-img');
           
             const cardContent = $('<div></div>').addClass('card-content').append(name, age, gender, breed, link);
-            const cardImage = $('<div></div>').addClass('card-image').append(photo);
+            //const cardImage = $('<div></div>').addClass('card-image').append(photo);
           
             const row = $('<div></div>').addClass('row').append(
               $('<div></div>').addClass('col s8').append(cardContent),
-              $('<div></div>').addClass('col s4').append(cardImage)
+              //$('<div></div>').addClass('col s4').append(cardImage)
             );
           
             card.append(row);
@@ -85,8 +85,79 @@ function getDogs(zipCode, limit) {
         console.log(`AJAX request failed: ${textStatus}, ${errorThrown}`);
     });
 
+  };
 
-//Event Listener for tab scrolling to respective section when clicked
+
+    function getVetShelters (zipCode) {
+        const dogOfficesURL = `https://api.petfinder.com/v2/organizations?type=vet,shelter&location=${zipCode}&has_phone=true&has_website=true&limit=5`;
+
+        $.ajax({
+            url: dogOfficesURL,
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
+            method: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                console.log(data);
+                const orgContainer = $('#vetEl');
+
+                
+                $.each(data.organizations, function(location, org) {
+                    const card = $('<div>').addClass('card');
+                    const name = $('<h4>').text(org.name).addClass('name');
+                    const address = $('<p>').text(`Address: ${org.address.address1}, ${org.address.city}, ${org.address.state}, ${org.address.postcode}`);
+                    const phone = $('<p>').text(`Phone: ${org.phone}`);
+                    const website = $('<a>').attr('href', org.website).text(org.website);
+        
+                    card.append(name, address, phone, website);
+                    // card.append(address);
+                    // card.append(phone);
+                    // card.append(website);
+        
+                    orgContainer.append(card);
+                });
+            },
+            error: function(error) {
+                console.error(error);
+            }
+        });
+    };
+  
+
+   
+    function getDogKnowledge() {
+        $.ajax({
+            url: 'https://dogapi.dog/api/v2/facts',
+            type: 'GET',
+            dataType: 'json',
+            headers: {
+              'accept': 'application/json'
+            },
+            data: {
+              'limit': '5'
+            },
+            success: function(response) {
+            console.log(response);
+              var dogFactEl = $('#dogFactEl');
+              $.each(response.data, function(index, fact) {
+                var card = $('<div>').addClass('card');
+                var content = $('<div>').addClass('card-content');
+                var body = $('<p>').text(fact.attributes.body).addClass('text');
+                content.append(body);
+                card.append(content);
+                dogFactEl.append(card);
+              });
+            },
+            error: function(xhr, status, error) {
+              console.log(error);
+            }
+          });
+        };
+
+
+        //Event Listener for tab scrolling to respective section when clicked
+      /*
 function scrollToSection(id) {
   const section = document.querySelector(id);
   if (section) {
@@ -118,71 +189,4 @@ vetTab.addEventListener('click', function(e) {
   scrollToSection('#vetEl');
 });
 
-
-    function getVetShelters (zipCode) {
-        const dogOfficesURL = `https://api.petfinder.com/v2/organizations?type=vet,shelter&location=${zipCode}&has_phone=true&has_website=true&limit=5`;
-
-        $.ajax({
-            url: dogOfficesURL,
-            headers: {
-                Authorization: `Bearer ${token}`
-            },
-            method: 'GET',
-            dataType: 'json',
-            success: function(data) {
-                console.log(data);
-                const orgContainer = $('#vetEl');
-
-                
-                $.each(data.organizations, function(location, org) {
-                    const card = $('<div>').addClass('card');
-                    const name = $('<h2>').text(org.name);
-                    const address = $('<p>').text(`Address: ${org.address.address1}, ${org.address.city}, ${org.address.state}, ${org.address.postcode}`);
-                    const phone = $('<p>').text(`Phone: ${org.phone}`);
-                    const website = $('<a>').attr('href', org.website).text(org.website);
-        
-                    card.append(name, address, phone, website);
-                    // card.append(address);
-                    // card.append(phone);
-                    // card.append(website);
-        
-                    orgContainer.append(card);
-                });
-            },
-            error: function(error) {
-                console.error(error);
-            }
-        });
-    };
-
-   
-    function getDogKnowledge() {
-        $.ajax({
-            url: 'https://dogapi.dog/api/v2/facts',
-            type: 'GET',
-            dataType: 'json',
-            headers: {
-              'accept': 'application/json'
-            },
-            data: {
-              'limit': '5'
-            },
-            success: function(response) {
-            console.log(response);
-              var dogFactEl = $('#dogFactEl');
-              $.each(response.data, function(index, fact) {
-                var card = $('<div>').addClass('card');
-                var content = $('<div>').addClass('card-content');
-                var body = $('<p>').text(fact.attributes.body).addClass('text');
-                content.append(body);
-                card.append(content);
-                dogFactEl.append(card);
-              });
-            },
-            error: function(xhr, status, error) {
-              console.log(error);
-            }
-          });
-        };
-    
-      }
+    */
