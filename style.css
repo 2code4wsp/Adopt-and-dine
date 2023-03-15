@@ -49,6 +49,8 @@ background-size: cover;
 #navList {
   display: flex;
   /*created rounded corners on top of tab */
+  height: 60px;
+  width: 500px;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -58,10 +60,8 @@ background-size: cover;
   padding: 0px 5px;
   border: none;
   background-color: #f2f2f2;
-  font-size: 16px;
   color: #333;
   border-radius: 5px 5px 0 0;
-  font-size: 300px;
 }
 
 .tab:first-child {
@@ -133,7 +133,7 @@ background-size: cover;
   font-size: 1.5em;
  }
  
-.wrap {
+ .wrap {
   display: inline-flex;
   flex-wrap: wrap;
 }
@@ -143,17 +143,43 @@ background-size: cover;
   display: inline-flex;
   flex-wrap:wrap;
   padding: 15px;
+  height: 300px;
+  width: 450px;
+  border: 1px solid purple;
+  background-image: url("/dog-bones.png");
+  /* so image wont repeat */
+  background-repeat: no-repeat;
+  /* ensures image covers entire element */ 
+  background-size: cover; 
+  
+  display: flex;
+  flex-direction:row;
+  padding: 15px;
   background: #fff;
   height: 300px;
   width: 450px;
   border: 1px solid purple;
-}
+  background-image: url("/fur-background.png");
+  /* so image wont repeat */
+  background-repeat: no-repeat;
+  /* ensures image fits inside element */ 
+  background-size: contain;
+} 
 
 .card-title {
   border-left: 3px solid purple;
   padding-left: 12px;
 }
 
+p {
+  color: black;
+  font-size: larger;
+  font-weight: 300;
+}
+
+a {
+  font-size: x-large;
+}
 
 p {
   color: black;
@@ -181,6 +207,7 @@ a {
   text-align: center;
 }
 
+
 .vetEl.card{
   margin: 25px 25px;
   max-height: 100px;
@@ -201,3 +228,4 @@ a {
  }
 
  
+

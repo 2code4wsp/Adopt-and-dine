@@ -84,8 +84,40 @@ function getDogs(zipCode, limit) {
     .fail(function(jqXHR, textStatus, errorThrown) {
         console.log(`AJAX request failed: ${textStatus}, ${errorThrown}`);
     });
-    
-    };
+
+
+//Event Listener for tab scrolling to respective section when clicked
+function scrollToSection(id) {
+  const section = document.querySelector(id);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+const aboutTab = document.querySelector('a[href="#aboutEl"]');
+aboutTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#aboutEl');
+});
+
+const dogTipsTab = document.querySelector('a[href="#primaryMatchEl"]');
+dogTipsTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#primaryMatchEl');
+});
+
+const additionalDogTab = document.querySelector('a[href="#additionalDogEl"]');
+additionalDogTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#additionalDogEl');
+});
+
+const vetTab = document.querySelector('a[href="#vetEl"]');
+vetTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#vetEl');
+});
+
 
     function getVetShelters (zipCode) {
         const dogOfficesURL = `https://api.petfinder.com/v2/organizations?type=vet,shelter&location=${zipCode}&has_phone=true&has_website=true&limit=5`;
@@ -100,7 +132,8 @@ function getDogs(zipCode, limit) {
             success: function(data) {
                 console.log(data);
                 const orgContainer = $('#vetEl');
-        
+
+                
                 $.each(data.organizations, function(location, org) {
                     const card = $('<div>').addClass('card');
                     const name = $('<h4>').text(org.name).addClass('name');
@@ -186,6 +219,5 @@ vetTab.addEventListener('click', function(e) {
   scrollToSection('#vetEl');
 });
 
-    */
-    
-
+  }  */
+}
