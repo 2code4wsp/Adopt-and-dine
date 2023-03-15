@@ -44,7 +44,7 @@ function getDogs(zipCode, limit) {
             'type': 'dog',
             'location': zipCode,
             'limit': '15',
-            'fields': 'name,age,gender,breeds,photos',
+            'fields': 'name,age,gender,breeds,photo',
         }
     })
     .done(function(data) {
@@ -67,7 +67,7 @@ function getDogs(zipCode, limit) {
             const gender = $('<p></p>').text(`Gender: ${dog.gender}`);
             const breed = $('<p></p>').text(`Breed: ${dog.breeds.primary}`);
             const link = $('<a></a>').attr('href', dog.url).text('Adopt Me!');
-            //const photo = $('<img>').attr('src', dog.photos[0].small).addClass('responsive-img');
+            //const photo = $('<img>').attr('src', dog.photos[0].medium).addClass('responsive-img');
           
             const cardContent = $('<div></div>').addClass('card-content').append(name, age, gender, breed, link);
             //const cardImage = $('<div></div>').addClass('card-image').append(photo);
