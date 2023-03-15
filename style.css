@@ -136,16 +136,13 @@ background-size: cover;
 /* .wrap {
   display: inline-flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  
 }
 
 
  .card {
   display: flex;
   flex-direction:row;
+  flex-wrap:wrap;
   padding: 15px;
   height: 300px;
   width: 450px;
@@ -185,6 +182,16 @@ a {
   font-size: x-large;
 }
 
+/*p {
+  color: black;
+  font-size: larger;
+  font-weight: 300;
+}
+
+a {
+  font-size: x-large;
+}*/
+
 .card-image {
   max-height: 200px;
 }
@@ -201,9 +208,25 @@ a {
   text-align: center;
 }
 
-.vetEl{
+
+.vetEl.card{
   margin: 25px 25px;
-  display:flex;
+  max-height: 100px;
+  max-width: 400px;
+  display: flex;
   flex-wrap: wrap;
-  height: 100px;
-}  */
+}
+
+
+
+.card-content {
+  margin-left: 25px;
+ }
+ 
+ .card img {
+   margin-top: 15px;
+ 
+ }
+
+ 
+

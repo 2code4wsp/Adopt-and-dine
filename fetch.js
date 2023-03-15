@@ -69,7 +69,7 @@ function getDogs(zipCode, limit) {
             const link = $('<a></a>').attr('href', dog.url).text('Adopt Me!');
             const photo = $('<img>').attr('src', dog.photos[0].medium).addClass('responsive-img');
           
-            const cardContent = $('<div></div>').addClass('card-content').append(name, age, gender, breed, link);
+            const cardContent = $('<div></div>').addClass('card-content').append(name, age, gender, breed, link, photo);
             const cardImage = $('<div></div>').addClass('card-image').append(photo);
           
             const row = $('<div></div>').addClass('row').append(
@@ -136,7 +136,7 @@ vetTab.addEventListener('click', function(e) {
                 
                 $.each(data.organizations, function(location, org) {
                     const card = $('<div>').addClass('card');
-                    const name = $('<h2>').text(org.name);
+                    const name = $('<h4>').text(org.name).addClass('name');
                     const address = $('<p>').text(`Address: ${org.address.address1}, ${org.address.city}, ${org.address.state}, ${org.address.postcode}`);
                     const phone = $('<p>').text(`Phone: ${org.phone}`);
                     const website = $('<a>').attr('href', org.website).text(org.website);
@@ -184,5 +184,39 @@ vetTab.addEventListener('click', function(e) {
             }
           });
         };
+
+
+        //Event Listener for tab scrolling to respective section when clicked
+function scrollToSection(id) {
+  const section = document.querySelector(id);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+const aboutTab = document.querySelector('a[href="#aboutEl"]');
+aboutTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#aboutEl');
+});
+
+const dogTipsTab = document.querySelector('a[href="#primaryMatchEl"]');
+dogTipsTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#primaryMatchEl');
+});
+
+const additionalDogTab = document.querySelector('a[href="#additionalDogEl"]');
+additionalDogTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#additionalDogEl');
+});
+
+const vetTab = document.querySelector('a[href="#vetEl"]');
+vetTab.addEventListener('click', function(e) {
+  e.preventDefault();
+  scrollToSection('#vetEl');
+});
+
     
       }
