@@ -74,7 +74,7 @@ background-size: cover;
 
 .nav-wrapper {
     line-height: 70px;
-    background-image: url("/bottom-grass-water-splash.jpg");
+    background-image: url("bottom-grass-water-splash.jpg");
     /* so image wont repeat */
     background-repeat: no-repeat;
     /* ensures image covers entire element */ 
@@ -144,12 +144,12 @@ background-size: cover;
   flex-wrap:wrap;
   padding: 15px;
   border: 1px solid purple;
-  background-image: url("/dog-bones.png");
+  background-image: url("dog-bones.png");
   /* so image wont repeat */
   background-repeat: no-repeat;
   /* ensures image covers entire element */ 
   background-size: cover; 
-  background: #fff;
+
 } 
 
 .card-title {
