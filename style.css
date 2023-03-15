@@ -27,7 +27,7 @@ padding-left: 10px;
 padding-right: 10px;
 /* include path to grass background image */
 /* background-image: url("/grass-water-splash.jpg");*/
-background-image: url("/bottom-grass-water-splash.jpg");
+background-image: url("bottom-grass-water-splash.jpg");
 /* so image wont repeat */
 background-repeat: no-repeat;
 /* ensures image covers entire element */ 
@@ -74,7 +74,7 @@ background-size: cover;
 
 .nav-wrapper {
     line-height: 70px;
-    background-image: url("bottom-grass-water-splash.jpg");
+    background-image: url("bottom-grass-water-splash.png");
     /* so image wont repeat */
     background-repeat: no-repeat;
     /* ensures image covers entire element */ 
@@ -171,6 +171,7 @@ p {
   color: black;
   font-size: larger;
   font-weight: 300;
+  
 }
 
 a {
