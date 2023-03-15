@@ -85,9 +85,6 @@ function getDogs(zipCode, limit) {
         console.log(`AJAX request failed: ${textStatus}, ${errorThrown}`);
     });
 
-})
-.catch(error => console.error(error));
-
 
 //Event Listener for tab scrolling to respective section when clicked
 function scrollToSection(id) {
@@ -122,10 +119,6 @@ vetTab.addEventListener('click', function(e) {
 });
 
 
-
-    
-    };
-
     function getVetShelters (zipCode) {
         const dogOfficesURL = `https://api.petfinder.com/v2/organizations?type=vet,shelter&location=${zipCode}&has_phone=true&has_website=true&limit=5`;
 
@@ -140,7 +133,7 @@ vetTab.addEventListener('click', function(e) {
                 console.log(data);
                 const orgContainer = $('#vetEl');
 
-        
+                
                 $.each(data.organizations, function(location, org) {
                     const card = $('<div>').addClass('card');
                     const name = $('<h2>').text(org.name);
@@ -192,51 +185,4 @@ vetTab.addEventListener('click', function(e) {
           });
         };
     
-    
 
-const requestURL = 'https://dogapi.dog/api/v2'
-
-function getDogKnowledge() {
-    $.ajax({
-        url: 'https://dogapi.dog/api/v2/facts',
-        type: 'GET',
-        dataType: 'json',
-        headers: {
-          'accept': 'application/json'
-        },
-        data: {
-          'limit': '5'
-        },
-        success: function(response) {
-        console.log(response);
-          var dogFactEl = $('#dogFactEl');
-          $.each(response.data, function(index, fact) {
-            var card = $('<div>').addClass('card');
-            var content = $('<div>').addClass('card-content');
-            var body = $('<p>').text(fact.attributes.body);
-            content.append(body);
-            card.append(content);
-            dogFactEl.append(card);
-          });
-        },
-        error: function(xhr, status, error) {
-          console.log(error);
-        }
-      });
-      //get facts for dog breeds
-      $.ajax({
-        url: 'https://dogapi.dog/api/v2/breeds'
-        type: 'GET'
-        dataType: 'json'
-        headers: {
-          'accept': 'application/json'
-        },
-        data: {
-          'limit': '5'
-        },
-        success: function(response) {
-          console.log(response);
-        }
-      })
-    }
-    

@@ -133,7 +133,7 @@ background-size: cover;
   font-size: 1.5em;
  }
  
-.wrap {
+/* .wrap {
   display: inline-flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -168,7 +168,7 @@ background-size: cover;
   /*background-repeat: no-repeat;
   /* ensures image fits inside element */ 
   /*background-size: contain; */
-}
+} 
 
 .card-title {
   border-left: 3px solid purple;
@@ -191,8 +191,9 @@ a {
 
 
 #dogFactEl{
-  justify-content: center;
-  max-height: 100px;
+  width: 18%;
+  margin: 0 25px;
+  height: 50px;
   display: flex;
 }
 
@@ -201,7 +202,8 @@ a {
 }
 
 .vetEl{
+  margin: 25px 25px;
   display:flex;
   flex-wrap: wrap;
-  max-height: fit-content;
-}
+  height: 100px;
+}  */
