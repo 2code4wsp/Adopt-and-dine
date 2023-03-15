@@ -1,107 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!--ajax-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Fetch Your Furry Friend</title>
-</head>
+  </head>
 
-<body class="bg-color blue lighten-4">
-
+  <body class="bg-color blue lighten-4">
     <!-- navbar-fixed = fixes header at the top of the page and makes it always visible even when scrolling-->
     <header id="headerEl" class="headerEl green darken-2 white-text">
-        <!-- Add grass background image-->
-        <div class="subHeader" > 
-            <!-- add header and center class maybe -->
-            <h1 id="fetchFurryFriend" class="">Fetch Your Furry Friend</h1>
-            <!-- Added headerImgCircle class-->
-            <div class="headerImgCircle">
-                <img class="headerImg" src="adopt-dine-headshot.png" alt="An adoption dog" >
-            </div>
+      <!-- Add grass background image-->
+      <div class="subHeader">
+        <!-- add header and center class maybe -->
+        <h1 id="fetchFurryFriend" class="">Fetch Your Furry Friend</h1>
+        <!-- Added headerImgCircle class-->
+        <div class="headerImgCircle">
+          <img
+            class="headerImg"
+            src="adopt-dine-headshot.png"
+            alt="An adoption dog"
+          />
         </div>
+      </div>
 
-        <nav id="navBarEl" class="nav-extended navbar-fixed">
-            <!-- Background Color Sheme: green and purple -->
-            <!-- flow-text = materialize class to make text more responsive and prominent-->
-            <!-- nav-wrapper = materialize class used to defin container element that wraps around the navigation bar component-->
-            <!--<div class="row nav-wrapper green darken-2"> -->
-                <!--enclosed nav elements in ul element to manipulate to the right-->
-                <ul id="navList" class="right">
-                    <!-- Using js add a class "active" to <li> elements when (<li> #navLink) clicked-->
-                    <!-- Included id as href to manipulate navLink scroll -->
-                    <li id="navLink" class="tab navLink purple lighten-4"><a href="#aboutEl"
-                            class="purple-text text-darken-4">About</a></li>
-                    <li id="navLink" class="tab navLink indigo lighten-3"><a href="#additionalDogEl"
-                            class="indigo-text text-darken-4">Adopt</a></li>
-                    <li id="navLink" class="tab navLink lime lighten-3"><a href="#dogFactEl"
-                            class="indigo-text text-darken-4">Dog Facts</a></li>
-                    <li id="navLink" class="tab navLink teal lighten-4"><a href="#shelAndVetEl"
-                            class="teal-text text-darken-4">Shelters/Veterinarians</a></li>
-                </ul>
-            <!-- </div> -->
-        </nav>
-
+      <nav id="navBarEl" class="nav-extended navbar-fixed">
+        <!-- Background Color Sheme: green and purple -->
+        <!-- flow-text = materialize class to make text more responsive and prominent-->
+        <!-- nav-wrapper = materialize class used to defin container element that wraps around the navigation bar component-->
+        <!--<div class="row nav-wrapper green darken-2"> -->
+        <!--enclosed nav elements in ul element to manipulate to the right-->
+        <ul id="navList" class="right">
+          <!-- Using js add a class "active" to <li> elements when (<li> #navLink) clicked-->
+          <!-- Included id as href to manipulate navLink scroll -->
+          <li id="navLink" class="tab navLink purple lighten-4">
+            <a href="#aboutEl" class="purple-text text-darken-4">About</a>
+          </li>
+          <li id="navLink" class="tab navLink indigo lighten-3">
+            <a href="#additionalDogEl" class="indigo-text text-darken-4"
+              >Adopt</a
+            >
+          </li>
+          <li id="navLink" class="tab navLink lime lighten-3">
+            <a href="#dogFactEl" class="indigo-text text-darken-4">Dog Facts</a>
+          </li>
+          <li id="navLink" class="tab navLink teal lighten-4">
+            <a href="#shelAndVetEl" class="teal-text text-darken-4"
+              >Shelters/Veterinarians</a
+            >
+          </li>
+        </ul>
+        <!-- </div> -->
+      </nav>
     </header>
     <!-- added header and center -->
     <section id="searchBar" class="row searchBar center">
-        <section role="search">
-            <form action="#" method="get" class="m-t-20">
-                <!-- Used offset-s2 to center search field-->
-                <!-- fieldset use to be green accent-1-->
-                <fieldset class="col s8 offset-s2">
-                    <legend id="searchFieldLegend" class="black-text">Search PetFinder:</legend>
-                    <label for="s">
-                        <input type="search" name="s" id="s" placeholder="Enter zip code..."
-                            maxlength="200" />
-                    </label>
-                    <!-- btn = materlize class, common button at google-->
-                    <!-- waves-effect = materialize class for ripple on button-->
-                    <!-- dog icon included left of Submit button using materialize icons-->
-                    <!-- can use hoverable on any element to make it pop up on hover-->
-                    <!-- TODO: change button size to smaller size (btn-small)-->
-                    <button type="submit" title="Search for a new dinner date" id="searchBtn"
-                        class="btn waves-effect purple lighten-1 hoverable z-depth-3"><i
-                            class="material-icons left">pets</i>Submit</button>
-                </fieldset>
-            </form>
-        </section>
+      <section role="search">
+        <form action="#" method="get" class="m-t-20">
+          <!-- Used offset-s2 to center search field-->
+          <!-- fieldset use to be green accent-1-->
+          <fieldset class="col s8 offset-s2">
+            <legend id="searchFieldLegend" class="black-text">
+              Search PetFinder:
+            </legend>
+            <label for="s">
+              <input
+                type="search"
+                name="s"
+                id="s"
+                placeholder="Enter zip code..."
+                maxlength="200"
+              />
+            </label>
+            <!-- btn = materlize class, common button at google-->
+            <!-- waves-effect = materialize class for ripple on button-->
+            <!-- dog icon included left of Submit button using materialize icons-->
+            <!-- can use hoverable on any element to make it pop up on hover-->
+            <!-- TODO: change button size to smaller size (btn-small)-->
+            <button
+              type="submit"
+              title="Search for a new dinner date"
+              id="searchBtn"
+              class="btn waves-effect purple lighten-1 hoverable z-depth-3"
+            >
+              <i class="material-icons left">pets</i>Submit
+            </button>
+          </fieldset>
+        </form>
+      </section>
     </section>
 
     <section id="aboutEl" class="aboutEl container">
-        <h3>About Us</h3>
-        <p id="aboutText" class="aboutText center-align">There are so many wonderful dogs in need of wonderful people to adopt them. Fetch Your Furry Friend is a platform to look up available dogs to adopt, as well as shelters, and veterinarian clinics in the location of your choice. Whether its stopping by to browse potential furry friends, learning a new fact about dogs, or figuring out where you can take your companion to get medical care, we'll fetch what you need. </p>
+      <h3>About Us</h3>
+      <p id="aboutText" class="aboutText center-align">
+        There are so many wonderful dogs in need of wonderful people to adopt
+        them. Fetch Your Furry Friend is a platform to look up available dogs to
+        adopt, as well as shelters, and veterinarian clinics in the location of
+        your choice. Whether its stopping by to browse potential furry friends,
+        learning a new fact about dogs, or figuring out where you can take your
+        companion to get medical care, we'll fetch what you need.
+      </p>
     </section>
-<div class="wrap">
-    <section id="additionalDogEl" class="container row additionalDogEl purple-text text-lighten-1">
-
-            
-    </section>
-    <section class="'dogFactEl">
-        <section id="dogFactEl" class="container row dogFactEl purple-text text-lighten-1">
-        
+    <div class="wrap container">
+      <section class="additionalDogEl">
+        <section id="additionalDogEl" class="container row additionalDogEl purple-text text-lighten-1">
         </section>
-    </section>
+      </section>
 
+      <section class="'dogFactEl">
+        <section id="dogFactEl" class="container row dogFactEl purple-text text-lighten-1">
+        </section>
+      </section>
 
-    <section id="vetEl" class="vetEl container row  purple-text text-lighten-1">
-        
+      <section class="vetEl">
+        <section id="vetEl" class="vetEl container row purple-text text-lighten-1">
+        </section>
+      </section>
+    </div>
 
-    </section>
-
-</div>
-    
     <script src="fetch.js"></script>
-</body>
-
+  </body>
 </html>
