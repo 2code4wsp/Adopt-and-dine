@@ -67,14 +67,14 @@ function getDogs(zipCode, limit) {
             const gender = $('<p></p>').text(`Gender: ${dog.gender}`);
             const breed = $('<p></p>').text(`Breed: ${dog.breeds.primary}`);
             const link = $('<a></a>').attr('href', dog.url).text('Adopt Me!');
-            const photo = $('<img>').attr('src', dog.photos[0].medium).addClass('responsive-img');
+            //const photo = $('<img>').attr('src', dog.photos[0].small).addClass('responsive-img');
           
-            const cardContent = $('<div></div>').addClass('card-content').append(name, age, gender, breed, link, photo);
-            const cardImage = $('<div></div>').addClass('card-image').append(photo);
+            const cardContent = $('<div></div>').addClass('card-content').append(name, age, gender, breed, link);
+            //const cardImage = $('<div></div>').addClass('card-image').append(photo);
           
             const row = $('<div></div>').addClass('row').append(
               $('<div></div>').addClass('col s8').append(cardContent),
-              $('<div></div>').addClass('col s4').append(cardImage)
+              //$('<div></div>').addClass('col s4').append(cardImage)
             );
           
             card.append(row);
@@ -85,38 +85,7 @@ function getDogs(zipCode, limit) {
         console.log(`AJAX request failed: ${textStatus}, ${errorThrown}`);
     });
 
-
-//Event Listener for tab scrolling to respective section when clicked
-function scrollToSection(id) {
-  const section = document.querySelector(id);
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
-  }
-}
-
-const aboutTab = document.querySelector('a[href="#aboutEl"]');
-aboutTab.addEventListener('click', function(e) {
-  e.preventDefault();
-  scrollToSection('#aboutEl');
-});
-
-const dogTipsTab = document.querySelector('a[href="#primaryMatchEl"]');
-dogTipsTab.addEventListener('click', function(e) {
-  e.preventDefault();
-  scrollToSection('#primaryMatchEl');
-});
-
-const additionalDogTab = document.querySelector('a[href="#additionalDogEl"]');
-additionalDogTab.addEventListener('click', function(e) {
-  e.preventDefault();
-  scrollToSection('#additionalDogEl');
-});
-
-const vetTab = document.querySelector('a[href="#vetEl"]');
-vetTab.addEventListener('click', function(e) {
-  e.preventDefault();
-  scrollToSection('#vetEl');
-});
+  };
 
 
     function getVetShelters (zipCode) {
@@ -154,6 +123,7 @@ vetTab.addEventListener('click', function(e) {
             }
         });
     };
+  
 
    
     function getDogKnowledge() {
@@ -187,6 +157,7 @@ vetTab.addEventListener('click', function(e) {
 
 
         //Event Listener for tab scrolling to respective section when clicked
+      /*
 function scrollToSection(id) {
   const section = document.querySelector(id);
   if (section) {
@@ -218,5 +189,4 @@ vetTab.addEventListener('click', function(e) {
   scrollToSection('#vetEl');
 });
 
-    
-      }
+    */
